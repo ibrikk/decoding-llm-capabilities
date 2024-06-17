@@ -6,7 +6,7 @@ This repository contains the code and resources for the Comparison of LLM Tools 
 
 File naming convention: LLM tools were prompted to fill in the methods. For instance, ```directions.py``` file is the orignal template file and ```directions_chat_gpt4.py``` is the solution provided by Chat GPT 4 and so on.
 
-## Setup Instructions
+## Virtual Environment Setup
 
 ### Unix-like Systems (macOS, Linux)
 
@@ -39,7 +39,7 @@ Then you can run scripts directly
 ./run_tests.sh
 ```
 
-## Installation Guide for Pytest
+<!-- ## Installation Guide for Pytest
 
 ### Overview
 
@@ -107,11 +107,11 @@ def test_subtraction():
 pytest test_arithmetic.py
 ```
 
-`pytest` will automatically find and execute the tests, reporting the results in the terminal.
+`pytest` will automatically find and execute the tests, reporting the results in the terminal. -->
 
-### Conclusion
+<!-- ### Conclusion
 
-You now have `pytest` installed and are ready to start testing your Python applications. For more detailed information and advanced features, visit the [Pytest documentation](https://docs.pytest.org/en/stable/).
+You now have `pytest` installed and are ready to start testing your Python applications. For more detailed information and advanced features, visit the [Pytest documentation](https://docs.pytest.org/en/stable/). -->
 
 ## Prompts given to LLMs:
 
