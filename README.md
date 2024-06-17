@@ -13,7 +13,7 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
 ### Unix-like Systems (macOS, Linux)
 
 1. Clone the repository and run ```bash
-    bash setup.sh
+    bash setup.sh ```
 
 2. Activate the virtual environment:
    source myenv/bin/activate
@@ -21,7 +21,7 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
 ### For Windows
 
 1. Clone the repository and run ```bash
-    setup.bat
+    setup.bat ```
 
 2. Activate the virtual environment:
     myenv\Scripts\activate
