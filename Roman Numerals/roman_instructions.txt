@@ -1,0 +1,165 @@
+Project 3: Valid Roman Numerals
+Project Goals
+Practice test-driven development
+Review string manipulation methods
+Template and Data Files
+Template File:  roman.py
+Introduction
+To quote WikipediaLinks to an external site.: “Roman numerals are a numeral system that originated in ancient Rome and remained the usual way of writing numbers throughout Europe well into the Late Middle Ages.  Numbers in this system are represented by combinations of letters from the Latin alphabet.”
+
+The modern usage of Roman numerals incorporate seven symbols, each of which is assigned a fixed integer value:
+
+Symbol
+
+I
+
+V
+
+X
+
+L
+
+C
+
+D
+
+M
+
+Value
+
+1
+
+5
+
+10
+
+50
+
+100
+
+500
+
+1000
+
+Note that each of these numbers is either a power of 10 (e.g., 1 = 100, 10 = 101) or 5 times a power of 10 (e.g., 5 = 5 * 100, 500 = 5 * 102).  The rules for valid Roman numerals stated below will refer to "integer power(s) of 10."  An integer power of 10 is a number that can be represented by 10n, where n is an integer.  100=102 is an integer power of 10; 500=102.69897... is not.
+
+There are certain sequences of these symbols that represent valid Roman numerals, whereas other sequences are invalid.  For example, consider the first 15 Roman numerals:
+
+Value
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+Sequence
+
+I
+
+II
+
+III
+
+IV
+
+V
+
+VI
+
+VII
+
+VIII
+
+IX
+
+X
+
+XI
+
+XII
+
+XIII
+
+XIV
+
+XV
+
+From this set of Roman numerals, we can see some interesting patterns.  First, many of the values are equal to the sum of the symbols contained in the string.  For example, I=1, II=2, VII=7, etc.  Second, most of the sequences are larger-valued symbols followed by smaller-valued symbols (e.g., VI, XI, XV).  Third, there are no more than three of the same symbol in a row in each sequence (i.e., there is no IIII or VIIII).
+
+However these two rules are not always true; for example, IV and VI have the same sum, but the sequences have values of 4 and 6, and also IV has a smaller-valued symbol preceding a larger-valued symbol.  It appears from this set of 15 numerals that the I symbol is permitted to precede larger-valued symbols, implying subtraction (e.g., IV = 5-1; IX = 10-1).  But, this is not true when more numerals are considered.
+
+For example, consider the number 49.  The sequence IL seems to work with the previous rule (IL = 50-1), but IL is not a valid Roman numeral.  Instead, 49 is properly represented by the sequence XLIX, which is interpreted as (50-10) + (10-1).  Clearly, the rules for proper Roman numerals are complex.
+
+Project Details
+The goal of this project is twofold.
+
+Develop a function valid_numeral(x), which takes a string as a parameter and returns a Boolean which refers to whether or not the Roman numeral is valid.  This valid_numeral() function can call helper functions to assist in deciding whether or not the number is valid.
+Use the test-driven development methodology and an accompanying set of rules to iteratively develop this function, creating test cases for each rule.  Your tests may be applied to the helper functions or to the overarching valid_numeral() function.
+For example, the function could be called with the parameters (and will consequently return) the following:
+
+valid_numeral('XVIII') = True
+valid_numeral('MCXIV') = True
+valid_numeral('CCCC') = False
+valid_numeral('CIL') = False
+To develop this function, you should develop test cases for the rules for valid Roman numerals in the following order (which only work for numbers between 1 and 3999):
+
+A valid Roman numeral consists only of alphabetic characters (as a corollary, the empty string is invalid).
+A valid Roman numeral only contains the characters I, V, X, L, C, D, and M (the lower-case versions of these characters are not valid).
+A valid Roman numeral should not have 4 of the same character in a row.
+A valid Roman numeral should be ordered from large-valued symbol to small-valued symbol. Unless…
+A valid Roman numeral can have a small-valued symbol precede a large-valued symbol, only if the small-valued symbol is an integer power of 10 (IX is valid, VX is not).
+A valid Roman numeral can have a small-valued symbol precede a large-valued symbol, only if the small-valued symbol is an integer power of 10 AND the small-valued symbol is one of the two symbols in size order before the large-valued symbol (IV and IX are valid, IL and IC are not).
+A valid Roman number can have a sequence of 2 or 3 symbols in a row if they are integer powers of 10, but not otherwise (II and III are valid, VV and VVV are not).
+The collection of rules 4-6 represent a rule followed by two refinements.  A Roman numeral will be considered valid if it passes rule 4 (in which case rules 5-6 are irrelevant), or if it fails rule 4 but passes both rules 5-6.  Considering the four previous examples then:
+
+XVIII is a valid Roman numeral because it follows all of the rules above (only rules 1-4&7 apply).
+MCXIV is a valid Roman numeral because it follows all of the rules above (all rules 1-7 apply; rule 4 fails but is corrected by rules 5 and 6 passing).
+CCCC is not a valid Roman numeral because it fails rule 3.
+CIL is not a valid Roman numeral because it fails both rules 4 and 6, even though it passes rule 5.
+Similarly:
+
+M2C is not a valid Roman numeral because it fails rule 1.
+ASDF is not a valid Roman numeral because it fails rule 2.
+VL is not a valid Roman numeral because it fails both rules 4 and 5, even though it passes the new portion of rule 6.
+XXX is a valid Roman numeral because it passes all rules.
+LLL is not a valid Roman numeral because it fails rule 7.
+Test-Driven Development Process
+The goal of this assignment is to practice your test-driven development strategies, in addition to getting a refresher on string methods.  Rather than writing this function from no basis, or developing this function by trial and error, you should create test cases that may pass or fail these rules.  Remember the five phases that were discussed in class:
+
+Write a test in response to a requirement.
+Run the full set of tests (the new one will most likely fail).
+Write code that will cause the new test to pass.
+Run the full set of tests to verify that your new code didn't break anything else.
+Refactor your code and repeat.
+With respect to the rules above, this means that you should write all tests and code necessary to successfully support Rule 1 before moving on to consider Rule 2.  Your valid_numeral() function does not necessarily need to process the rules in this order -- the refactoring process may change how you consider each of the steps.  You should not limit yourself to one test per rule -- make sure that you are considering many input cases.
+
+Note that some of these rules are providing you with new requirements (Rules 1, 3, 4, 7), whereas other rules are refining existing requirements (Rules 2, 5, 6).  Writing tests for the rules in order will help you work through the relationships in the requirements.  For example, you can write test cases for Rule 1 that include arguments with numbers, spaces, underscores, parentheses, capital letters, lowercase letters, and combinations of these.
+
+As you write tests, note that these rules only apply to Roman numerals with values between 1 (I) and 3999 (MMMCMXCIX).  You should not write test cases for numbers 4000 and larger.
+
+There do exist Python modules which will create and/or interpret Roman numerals for you.  You ARE NOT permitted to use these modules.

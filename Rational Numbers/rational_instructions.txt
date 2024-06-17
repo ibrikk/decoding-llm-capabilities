@@ -1,0 +1,84 @@
+Project 4: Rational Numbers
+Project Goals
+Create a class and write some methods!
+Utilize a more structured testing setup, using multiple files and unittest.
+Template File
+rational.py
+rationalTest.py
+Introduction
+One shortcoming of computers is the accurate representation of floating-point numbers.  Any positive integer can be easily represented by a computer in binary: 
+
+2 can be represented as 10
+42 can be represented as 101010
+1000 can be represented as 1111101000
+Some floating-point numbers are also easy to represent in binary: 
+
+0.5 can be represented as 0.1
+0.125 can be represented as 0.001
+0.109375 can be represented as 0.000111
+But consider the number 0.1, a simple number to represent in base-10.  The binary equivalent of this number is 0.0001100110011001100110011001100110011001100110011001100... (the sequence continues forever).  This causes some unexpected behavior at times.  For example, if you try to add 0.1+0.2 in Python (or C or Java), the result of the computation will display as 0.30000000000000004.  This is clearly a challenge for accuracy in computations, and there is unfortunately no built-in way to express these floating-point numbers in fractional form.  So instead, you'll create one!
+
+Project Details
+For this project, you will create nine methods internal to a Rational class that is provided for you in the template file linked at the top of the page.  Much like with the projects earlier in the semester, you will be practicing the test-driven development process with this project, now introducing classes and objects into the testing process.
+
+A quick overview of some special behavior of this Rational class:
+
+A negative Rational could either be represented by a negative value stored in __numerator or a negative value stored in __denominator.  If negative values are stored in both, the reduce() method that is provided for you will make them both positive.
+If a Rational happens to reduce to a whole number, it will still be saved in Rational form.  In other words, if the result of an add() call creates a fraction 6/2, it should reduce to 3/1 but will remain 3/1 rather than turning into 3.
+Before moving into the methods that you will create, here is a quick overview of methods that are provided for you (don't change the functionality of these methods):
+
+__init__(self, iNum, iDen):  Initializes a new Rational object with value iNum/iDen stored in hidden __numerator and __denominator variables.  These are the only instance variables that you should need to define as a part of your Rational class.  This method also calls the reduce() method, described next.
+reduce(self):  Reduces a Rational object to its lowest terms, e.g., 2/4 is reduced to 1/2.  If both the numerator and denominator are negative, this method makes them both positive.  After that, it repeatedly calls the gcf() method (defined next) to find common factors between the numerator and denominator, which are used to reduce the Rational.
+gcf(self):  Determines the greatest common factor between the numerator and denominator.  When it finds a number divisible by both, it breaks the search loop and returns that number.  The smallest factor that can be returned is 1.
+__str__(self):  Returns a string representation of the Rational object, e.g., "1/8".  This is a "dunder" method that will be useful for you in debugging.  You can call print(r1) on Rational object r1 to use this method.
+__eq__(self, r2):  Determines if two Rationals are exactly equal to each other (same numerator and same denominator, no consideration of reducing the numbers).  This method is necessary for the grading code, but you can also use it to test your methods by checking r1==r2 for Rational objects r1 and r2.
+Next, the methods that you will write.  In the method descriptions and usage cases below, you can assume that r1 and r2 are valid (non-zero denominator) Rational objects with __numerator and __denominator instance variables initialized with values. 
+
+Accessors and mutators:  You should create accessors and mutators (or "getters" and "setters") for both the __numerator and __denominator instance variables.  There are thus four required methods here:  getNumerator(self), getDenominator(self), setNumerator(self, n), and setDenominator(self, d).  Additionally, the mutators should call the reduce() method to put the updated Rational in lowest terms, e.g., calling setDenominator(4) on the Rational 2/7 should update the Rational to 2/4 and then reduce it to 1/2.  Only the accessors should return a value.
+Usage:  n = r1.getNumerator()
+If r1 is 3/4, returns 3.
+Usage:  d = r1.getDenominator()
+If r1 is 3/4, returns 4.
+Usage:  r1.setNumerator(7)
+If r1 is 3/14, updates r1 to 7/14 and then reduces to 1/2
+Usage:  r1.setDenominator(-4)
+If r1 is 3/4, updates r1 to 3/-4
+isValid(self):  Rational numbers cannot have a 0 in the denominator.  This method should return True if the Rational is valid, and should return False if the Rational has a 0 denominator.
+Usage:  val = r1.isValid()
+If r1 is 7/4, returns True
+If r1 is -7/0, returns False
+reciprocal(self):  modifies the rational number into its reciprocal.
+Usage:  r1.reciprocal()
+If r1 is 7/4, the method will modify r1 to be 4/7
+add(self, num2):  Given input Rational num2, you should add num2 to the current Rational, updating the self.__numerator and self.__denominator instance variables to the sum of self and num2.  You should also call the reduce() method to put the Rational in lowest terms.  Nothing is returned by this method.
+Usage:  r1.add(r2)
+If r1 is 1/4 and r2 is 1/8, updates r1 to 3/8
+sub(self, num2):  Same as the add() method, but subtracting num2 from self.
+Usage:  r1.sub(r2)
+If r1 is 1/4 and r2 is 1/8, updates r1 to 1/8
+mult(self, num2):  Same as the add() method, but multiplying num2 by self.
+Usage:  r1.mult(r2)
+If r1 is 1/4 and r2 is 1/8, updates r1 to 1/32
+div(self, num2):  Same as the add() method, but dividing num2 out of self.
+Usage:  r1.div(r2)
+If r1 is 1/4 and r2 is 1/8, updates r1 to 2/1
+Test-Driven Development Process
+One goal of this assignment is to practice your test-driven development strategies.  Rather than writing your methods from no basis, or developing these methods by trial and error, you should create test cases that may pass or fail these rules.  Remember the five phases that were discussed earlier in the semester:
+
+Write a test in response to a requirement.
+Run the full set of tests (the new one will most likely fail).
+Write code that will cause the new test to pass.
+Run the full set of tests to verify that your new code didn't break anything else.
+Refactor your code and repeat.
+Submission Details
+To complete this activity, you must submit the following file to Web-CAT:
+
+rational.py, which contains all four functions described above, as well as your collection of tests.  Use the template provided above
+Include at least 27 tests, and possibly more.  3 tests per function, times 9 functions total = 27 tests.  A good assertion counts as a test.
+Grading and Early/Lateness
+This project is worth 80 points.  60 points come from passing webcat's unit tests when submitting your project to Web-CAT.  20 points will be given by TAs who grade your program for:
+
+Design/Readability: code that is clear in it's design and purpose towards a certain goal. 
+Documentation: comments and descriptions which explain code, functions, and structures in plain language (remember the 1064 style guide!)
+Your Unit Tests:  tests you made during test-driven development which ensure confidence that your software is working as intended. 
+You can submit the project up to 3 days late.  A late submission earns a penalty of 5 points per 12 hours late.  Webcat is strict on the timings, so a submission 5 minutes late will receive 5 penalty points.  An on-time submission is from 0 to 24 hours before the deadline.  An early submission is 24 or more hours early, and will earn a bonus of 5 points.  Webcat will always use the most recent submission as the submission for grading. 
