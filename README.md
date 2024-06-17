@@ -7,6 +7,26 @@ This repository contains the code and resources for the Comparison of LLM Tools 
 File naming convention: LLM tools were prompted to fill in the methods. For instance, ```directions.py``` file is the orignal template file and ```directions_chat_gpt4.py``` is the solution provided by Chat GPT 4 and so on.
 
 ## Usage
+
+## Setup Instructions
+
+### Unix-like Systems (macOS, Linux)
+
+1. Clone the repository and run ```bash
+    bash setup.sh
+
+2. Activate the virtual environment:
+   source myenv/bin/activate
+
+### For Windows
+
+1. Clone the repository and run ```bash
+    setup.bat
+
+2. Activate the virtual environment:
+    myenv\Scripts\activate
+
+
 Install Pytest: ```pip install -U pytest```. \
 If you are on Linux/MacOS make sure to set the execution permissions using `chmod +x run_tests.sh` to run the scripts. Then, you can run the scripts directly by executing `./run_tests.sh`. \
 If you are on Windows, you can run the scripts directly by executing `./run_tests.bat`
