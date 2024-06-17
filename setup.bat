@@ -1,13 +1,16 @@
-:: setup.bat
 @echo off
 
-:: Create virtual environment
+REM Install Python 3 from the official website (https://www.python.org/downloads/)
+REM Follow the installation instructions and make sure to select the option to add Python to the system PATH
+
+REM Create virtual environment
 python -m venv myenv
 
-:: Activate virtual environment
-call myenv\Scripts\activate
+REM Activate virtual environment
+call myenv\Scripts\activate.bat
 
-:: Install dependencies
-pip install -r requirements.txt
+REM Install pytest
+pip install pytest
 
-echo Virtual environment setup complete. Use 'myenv\Scripts\activate' to activate.
+echo Virtual environment setup complete with Python 3 and pytest installed. Use 'myenv\Scripts\activate.bat' to activate.
+pause
