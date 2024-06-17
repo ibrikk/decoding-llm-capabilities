@@ -19,7 +19,7 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
 
 ### For Windows
 
-1. Clone the repository, cd into the project directory, and run ```bash
+1. Clone the repository, cd into the project directory, and run ```
     setup.bat```
 
 2. Activate the virtual environment:
