@@ -29,7 +29,7 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
 If you are on Linux/MacOS make sure to set the execution permissions using `chmod +x run_tests.sh` to run the scripts. Then, you can run the scripts directly by executing `./run_tests.sh`. \
 If you are on Windows, you can run the scripts directly by executing `./run_tests.bat`
 ## Pytest Command
-To run the test for each coding challenge, navigate to its deirectory first e.g ```Directions``` or ```Roman Numerals```, etc. and then use the following commands. \
+To run the test for each coding challenge, navigate (cd) to its deirectory first e.g ```Directions``` or ```Roman Numerals```, etc. and then use the following commands. \
 By applying chmod +x to your script for Linux/MacOS, you're changing its permissions to include execution rights for the user, effectively allowing you to run the script directly.
 ```bash
 chmod +x run_tests.sh
