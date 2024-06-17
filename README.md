@@ -10,7 +10,7 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
 
 ### Unix-like Systems (macOS, Linux)
 
-1. Clone the repository and run ```bash
+1. Clone the repository, cd into the project directory, and run ```bash
     setup.sh```
 
 2. Activate the virtual environment:
@@ -18,7 +18,7 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
 
 ### For Windows
 
-1. Clone the repository and run ```bash
+1. Clone the repository, cd into the project directory, and run ```bash
     setup.bat```
 
 2. Activate the virtual environment:
