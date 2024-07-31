@@ -44,10 +44,27 @@ def count_failures(output_file, test_type):
 
     return failure_counts
 
+def parse_mutation_results(result_file):
+    killed = 0
+    survived = 0
+    with open(result_file, 'r') as file:
+        lines = file.readlines()
+
+    for line in lines:
+        if "ok_killed" in line:
+            killed += 1
+        elif "bad_survived" in line:
+            survived += 1
+
+    total = killed + survived
+    mutation_score = (killed / total) * 100 if total > 0 else 0
+    return killed, survived, mutation_score
+
 def main():
     # Define the output files
     reference_output_file = 'reference_pytest_output.txt'
     direct_output_file = 'direct_pytest_output.txt'
+    mutation_result_file = 'mutation_test_results.txt'
     
     # Count failures
     reference_failure_counts = count_failures(reference_output_file, "reference")
@@ -59,6 +76,13 @@ def main():
         ref_tests = reference_failure_counts.get(module, 0)
         dir_tests = direct_failure_counts.get(module, 0)
         print(f"{module}: {ref_tests} failed reference tests, {dir_tests} failed unit tests")
+
+    # Parse mutation results
+    killed, survived, mutation_score = parse_mutation_results(mutation_result_file)
+    print("\nMutation Testing Results:")
+    print(f"Killed mutants: {killed}")
+    print(f"Survived mutants: {survived}")
+    print(f"Mutation Score: {mutation_score:.2f}%")
 
 if __name__ == "__main__":
     main()
