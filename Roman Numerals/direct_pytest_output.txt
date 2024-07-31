@@ -1,0 +1,167 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.4, pytest-8.3.2, pluggy-1.5.0
+rootdir: C:\Users\vmascuser\Documents\decoding-llm-capabilities\Roman Numerals
+collected 15 items
+
+test_unit_tests.py FFFF.FFFFF.FF..                                       [100%]
+
+================================== FAILURES ===================================
+_______________________ test_roman_chat_gpt4o_new_test1 _______________________
+
+    def test_roman_chat_gpt4o_new_test1():
+>       roman_chat_gpt4o_new.test1()
+
+test_unit_tests.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test1():
+>       assert valid_numeral("XIV") == True, "Test case 1 failed"
+E       AssertionError: Test case 1 failed
+
+roman_chat_gpt4o_new.py:65: AssertionError
+_______________________ test_roman_chat_gpt4o_new_test2 _______________________
+
+    def test_roman_chat_gpt4o_new_test2():
+>       roman_chat_gpt4o_new.test2()
+
+test_unit_tests.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test2():
+>       assert valid_numeral("MMMCMXCIX") == True, "Test case 2 failed"
+E       AssertionError: Test case 2 failed
+
+roman_chat_gpt4o_new.py:70: AssertionError
+_______________________ test_roman_chat_gpt4o_new_test3 _______________________
+
+    def test_roman_chat_gpt4o_new_test3():
+>       roman_chat_gpt4o_new.test3()
+
+test_unit_tests.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test3():
+>       assert valid_numeral("XIV") == True, "Test case 3 failed"
+E       AssertionError: Test case 3 failed
+
+roman_chat_gpt4o_new.py:76: AssertionError
+_______________________ test_roman_chat_gpt4o_new_test4 _______________________
+
+    def test_roman_chat_gpt4o_new_test4():
+>       roman_chat_gpt4o_new.test4()
+
+test_unit_tests.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test4():
+>       assert valid_numeral("MCXIV") == True, "Test case 4 failed"
+E       AssertionError: Test case 4 failed
+
+roman_chat_gpt4o_new.py:81: AssertionError
+_______________________ test_roman_chat_gpt4o_new_test6 _______________________
+
+    def test_roman_chat_gpt4o_new_test6():
+>       roman_chat_gpt4o_new.test6()
+
+test_unit_tests.py:21: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test6():
+>       assert valid_numeral("CCM") == True, "Test case 6 failed"
+E       AssertionError: Test case 6 failed
+
+roman_chat_gpt4o_new.py:92: AssertionError
+_______________________ test_roman_chat_gpt4o_new_test7 _______________________
+
+    def test_roman_chat_gpt4o_new_test7():
+>       roman_chat_gpt4o_new.test7()
+
+test_unit_tests.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test7():
+        assert valid_numeral("XVIII") == True, "Test case 7 failed"
+>       assert valid_numeral("XIV") == True, "Test case 7 failed"
+E       AssertionError: Test case 7 failed
+
+roman_chat_gpt4o_new.py:99: AssertionError
+_______________________ test_roman_chat_gpt4o_new_test8 _______________________
+
+    def test_roman_chat_gpt4o_new_test8():
+>       roman_chat_gpt4o_new.test8()
+
+test_unit_tests.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test8():
+>       assert valid_numeral("IV") == True, "Test case 8 failed"
+E       AssertionError: Test case 8 failed
+
+roman_chat_gpt4o_new.py:106: AssertionError
+_______________________ test_roman_chat_gpt4o_new_test9 _______________________
+
+    def test_roman_chat_gpt4o_new_test9():
+>       roman_chat_gpt4o_new.test9()
+
+test_unit_tests.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test9():
+>       assert valid_numeral("IV") == True, "Test case 9 failed"
+E       AssertionError: Test case 9 failed
+
+roman_chat_gpt4o_new.py:114: AssertionError
+______________________ test_roman_chat_gpt4o_new_test10 _______________________
+
+    def test_roman_chat_gpt4o_new_test10():
+>       roman_chat_gpt4o_new.test10()
+
+test_unit_tests.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test10():
+        assert valid_numeral("II") == True, "Test case 10 failed"
+        assert valid_numeral("III") == True, "Test case 10 failed"
+>       assert valid_numeral("VV") == False, "Test case 10 failed"
+E       AssertionError: Test case 10 failed
+
+roman_chat_gpt4o_new.py:124: AssertionError
+______________________ test_roman_chat_gpt4o_new_test12 _______________________
+
+    def test_roman_chat_gpt4o_new_test12():
+>       roman_chat_gpt4o_new.test12()
+
+test_unit_tests.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test12():
+>       assert valid_numeral("MCXIV") == True, "Test case 12 failed"
+E       AssertionError: Test case 12 failed
+
+roman_chat_gpt4o_new.py:136: AssertionError
+______________________ test_roman_chat_gpt4o_new_test13 _______________________
+
+    def test_roman_chat_gpt4o_new_test13():
+>       roman_chat_gpt4o_new.test13()
+
+test_unit_tests.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+    def test13():
+>       assert valid_numeral("MMMCMXCIX") == True, "Test case 13 failed"
+E       AssertionError: Test case 13 failed
+
+roman_chat_gpt4o_new.py:140: AssertionError
+=========================== short test summary info ===========================
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test1 - AssertionError: ...
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test2 - AssertionError: ...
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test3 - AssertionError: ...
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test4 - AssertionError: ...
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test6 - AssertionError: ...
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test7 - AssertionError: ...
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test8 - AssertionError: ...
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test9 - AssertionError: ...
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test10 - AssertionError:...
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test12 - AssertionError:...
+FAILED test_unit_tests.py::test_roman_chat_gpt4o_new_test13 - AssertionError:...
+======================== 11 failed, 4 passed in 0.05s =========================

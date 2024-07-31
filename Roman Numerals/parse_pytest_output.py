@@ -8,58 +8,57 @@ all_modules = [
     "roman_claude3_haiku",
     "roman_claude_free",
     "roman_github_copilot",
-    "roman_gemini"
+    "roman_gemini",
+    "roman_chat_gpt4o",
+    "roman_chat_gpt4o_new"
 ]
 
-def count_failures(output_file):
+def count_failures(output_file, test_type):
     failure_counts = {}
     with open(output_file, 'r') as file:
         lines = file.readlines()
-    
+
     for line in lines:
-        for module in all_modules:
-            if module in line:
-                if "FAILED" in line and "::" in line:
-                    parts = line.split("::")
-                    if len(parts) > 1:
-                        test_detail = parts[1].split(" - ")[0]  # Initial split by " - " to get the part with potential module name
-                    if "[" in test_detail:
-                        module_name = test_detail.split("[")[1].split("]")[0]  # Extracts module name from between brackets
-                    else:
-                        module_name = test_detail
-                    # If the extracted module name contains detailed identifiers (e.g., '-1-4-True-1/4'), remove them
-                    module_name = module_name.split("-")[0]  # Keeps only the base module name before any '-' character
-                    failure_counts[module_name] = failure_counts.get(module_name, 0) + 1
-    
-    
+        if test_type == "direct":
+            if "FAILED" in line and "::" in line:
+                # Isolate the part containing the test name
+                parts = line.split("::")
+                if len(parts) > 1:
+                    test_detail = parts[1].split(" - ")[0]
+                    if "test_" in test_detail:
+                        module_name = test_detail.split("test_")[1].split("_test")[0]
+                        failure_counts[module_name] = failure_counts.get(module_name, 0) + 1
+        else:
+            for module in all_modules:
+                if module in line:
+                    if "FAILED" in line and "::" in line:
+                        parts = line.split("::")
+                        if len(parts) > 1:
+                            test_detail = parts[1].split(" - ")[0]
+                        if "[" in test_detail:
+                            module_name = test_detail.split("[")[1].split("]")[0]
+                        else:
+                            module_name = test_detail
+                        module_name = module_name.split("-")[0]
+                        failure_counts[module_name] = failure_counts.get(module_name, 0) + 1
+
     return failure_counts
 
 def main():
-    # Use a relative path for simplicity and flexibility
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    output_file_name = 'pytest_output.txt'
-    output_file_path = os.path.join(script_dir, output_file_name)
+    # Define the output files
+    reference_output_file = 'reference_pytest_output.txt'
+    direct_output_file = 'direct_pytest_output.txt'
     
-    # Create the file if it does not exist
-    if not os.path.exists(output_file_path):
-        print(f"{output_file_name} does not exist, creating...")
-        open(output_file_path, 'a').close()  # 'a' mode will create the file if it doesn't exist
-    
-    print(f"Processing file: {output_file_path}")
-    failure_counts = count_failures(output_file_path)
+    # Count failures
+    reference_failure_counts = count_failures(reference_output_file, "reference")
+    direct_failure_counts = count_failures(direct_output_file, "direct")
 
-    if len(failure_counts) == 0:
-        print("All tests passed!")
-    else:
-        print("Failure Counts by Module:")
-        for module, count in failure_counts.items():
-            # Using the singular or plural form of "test" appropriately
-            test_word = "test" if count == 1 else "tests"
-            print(f"{module}: {count} failed {test_word}")
-        for my_module in all_modules:
-            if my_module not in failure_counts:
-                print(f"{my_module}: 0 failed tests")
-        
+    # Print the results
+    print("Failure Counts by Module:")
+    for module in all_modules:
+        ref_tests = reference_failure_counts.get(module, 0)
+        dir_tests = direct_failure_counts.get(module, 0)
+        print(f"{module}: {ref_tests} failed reference tests, {dir_tests} failed unit tests")
 
 if __name__ == "__main__":
     main()
