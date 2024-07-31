@@ -16,6 +16,7 @@ REM Check if virtual environment module is installed
 python -m venv --help >nul 2>&1
 if errorlevel 1 goto install_venv
 
+:start
 REM Create virtual environment
 python -m venv myenv
 
@@ -25,7 +26,7 @@ call myenv\Scripts\activate.bat
 REM Install pytest
 pip install pytest
 
-echo Virtual environment setup complete with Python 3 and pytest installed. Use 'myenv\Scripts\activate.bat' to activate.
+echo Virtual environment setup complete with Python 3 and pytest installed. Use 'source myenv/Scripts/activate' to activate in Git Bash.
 goto end
 
 :install_python
