@@ -62,7 +62,7 @@ def main():
 
 # Rule 1: Check that the string contains only alphabetic characters
 def test1():
-    # assert valid_numeral("XIV") == True, "Test case 1 failed"
+    assert valid_numeral("XIV") == True, "Test case 1 failed"
     assert valid_numeral("X1V") == False, "Test case 1 failed"
     return "Test case 1 passed"
 

@@ -8,7 +8,9 @@ myenv/
 *.pyc
 
 # Ignore pytest output files
-**/pytest_output.txt
+**/direct_pytest_output.txt
+**/reference_pytest_output.txt
+**/mutation_test_results.txt
 
 # Ignore other files and directories
 .DS_Store
