@@ -31,18 +31,38 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
    git clone <repository_url>
    cd <project_directory>
    ```
-2. Run the setup script using `cmd.exe`:
-   ```bash
-   cmd.exe /c setup.bat
-   ```
-3. Activate the virtual environment:
+2. Run the setup script:
+
+   - For Command Prompt:
+
+     ```cmd
+     setup.bat
+     ```
+
    - For Git Bash:
+
+     ```bash
+     cmd.exe /c setup.bat
+     ```
+
+3. Activate the virtual environment:
+
+   - For Git Bash:
+
      ```bash
      source myenv/Scripts/activate
      ```
+
    - For Command Prompt:
+
      ```cmd
      myenv\Scripts\activate.bat
+     ```
+
+   - For PowerShell:
+
+     ```powershell
+     myenv\Scripts\Activate.ps1
      ```
 
 ## Running Tests
@@ -61,9 +81,18 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
 ### For Windows
 
 1. Run the script:
-   ```cmd
-   run_tests.bat
-   ```
+
+   - For Command Prompt:
+
+     ```cmd
+     run_tests.bat
+     ```
+
+   - For Git Bash:
+
+     ```bash
+     cmd.exe /c run_tests.bat
+     ```
 
 ## Pytest Command
 
@@ -83,9 +112,18 @@ To run the test for each coding challenge, navigate (`cd`) to its directory firs
 ### Windows
 
 1. Run the script:
-   ```cmd
-   run_tests.bat
-   ```
+
+   - For Command Prompt:
+
+     ```cmd
+     run_tests.bat
+     ```
+
+   - For Git Bash:
+
+     ```bash
+     cmd.exe /c run_tests.bat
+     ```
 
 ## Prompts given to LLMs:
 

@@ -1,0 +1,15 @@
+# Ignore virtual environment directory
+myenv/
+
+# Ignore Python cache directories
+**/__pycache__/
+
+# Ignore Python bytecode files
+*.pyc
+
+# Ignore pytest output files
+**/pytest_output.txt
+
+# Ignore other files and directories
+.DS_Store
+.env
