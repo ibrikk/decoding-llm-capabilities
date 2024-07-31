@@ -50,7 +50,7 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
    - For Git Bash:
 
      ```bash
-     source myenv/Scripts/activate
+     source myenv/Scripts/activate.bat
      ```
 
    - For Command Prompt:
