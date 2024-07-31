@@ -27,27 +27,24 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
 ### For Windows
 
 1. Clone the repository and navigate into the project directory:
-   ```bash
-   git clone <repository_url>
-   cd <project_directory>
-   ```
-2. Run the setup script:
 
    - For Command Prompt:
+     Press Win + R, type cmd, and press Enter.
 
-     ```cmd
-     setup.bat
-     ```
+```cmd
+git clone <repository_url>
+cd <project_directory>
+```
 
-   - For Git Bash:
+2. Run the setup script:
 
-     ```bash
-     cmd.exe /c setup.bat
-     ```
+   ```cmd
+   setup.bat
+   ```
 
 3. Activate the virtual environment:
 
-   - For Git Bash and Command Prompt:
+   - For Command Prompt:
 
      ```cmd
      myenv\Scripts\activate.bat
@@ -82,12 +79,6 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
      run_tests.bat
      ```
 
-   - For Git Bash:
-
-     ```bash
-     cmd.exe /c run_tests.bat
-     ```
-
 ## Pytest Command
 
 To run the test for each coding challenge, navigate (`cd`) to its directory first (e.g., `Directions` or `Roman Numerals`, etc.) and then use the following commands.
@@ -111,12 +102,6 @@ To run the test for each coding challenge, navigate (`cd`) to its directory firs
 
      ```cmd
      run_tests.bat
-     ```
-
-   - For Git Bash:
-
-     ```bash
-     cmd.exe /c run_tests.bat
      ```
 
 ## Prompts given to LLMs:
