@@ -1,43 +1,98 @@
-
 # Decoding the Capabilities of Large Language Models: A Multidimensional Comparison of LLM Tools for Algorithmic Code Generation
 
 ## Introduction
-This repository contains the code and resources for the Comparison of LLM Tools for Algorithmic Code Generation. 
 
-File naming convention: LLM tools were prompted to fill in the methods. For instance, ```directions.py``` file is the orignal template file and ```directions_chat_gpt4.py``` is the solution provided by Chat GPT 4 and so on.
+This repository contains the code and resources for the Comparison of LLM Tools for Algorithmic Code Generation.
+
+File naming convention: LLM tools were prompted to fill in the methods. For instance, `directions.py` is the original template file and `directions_chat_gpt4.py` is the solution provided by Chat GPT 4, and so on.
 
 ## Virtual Environment Setup
 
 ### Unix-like Systems (macOS, Linux)
 
-1. Clone the repository, cd into the project directory, and run ```bash
-    setup.sh```
-
-2. Activate the virtual environment:
-   ```bash 
-        source myenv/bin/activate
+1. Clone the repository and navigate into the project directory:
+   ```bash
+   git clone <repository_url>
+   cd <project_directory>
+   ```
+2. Run the setup script:
+   ```bash
+   bash setup.sh
+   ```
+3. Activate the virtual environment:
+   ```bash
+   source myenv/bin/activate
+   ```
 
 ### For Windows
 
-1. Clone the repository, cd into the project directory, and run ```
-    setup.bat```
+1. Clone the repository and navigate into the project directory:
+   ```bash
+   git clone <repository_url>
+   cd <project_directory>
+   ```
+2. Run the setup script:
+   ```cmd
+   setup.bat
+   ```
+3. Activate the virtual environment:
+   ```cmd
+   myenv\Scripts\activate
+   ```
 
-2. Activate the virtual environment:
-    ```bash
-        myenv\Scripts\activate
+## Running Tests
 
-If you are on Linux/MacOS make sure to set the execution permissions using `chmod +x run_tests.sh` to run the scripts. Then, you can run the scripts directly by executing `./run_tests.sh`. \
-If you are on Windows, you can run the scripts directly by executing `./run_tests.bat`
+### Unix-like Systems (macOS, Linux)
+
+1. Ensure the script has execution permissions:
+   ```bash
+   chmod +x run_tests.sh
+   ```
+2. Run the script:
+   ```bash
+   ./run_tests.sh
+   ```
+
+### For Windows
+
+1. Run the script:
+   ```cmd
+   run_tests.bat
+   ```
+
 ## Pytest Command
-To run the test for each coding challenge, navigate (cd) to its deirectory first e.g ```Directions``` or ```Roman Numerals```, etc. and then use the following commands. \
-By applying chmod +x to your script for Linux/MacOS, you're changing its permissions to include execution rights for the user, effectively allowing you to run the script directly.
-```bash
-chmod +x run_tests.sh
-```
-Then you can run scripts directly
-```bash
-./run_tests.sh
-```
+
+To run the test for each coding challenge, navigate (`cd`) to its directory first (e.g., `Directions` or `Roman Numerals`, etc.) and then use the following commands.
+
+### Unix-like Systems (macOS, Linux)
+
+1. Apply execution rights:
+   ```bash
+   chmod +x run_tests.sh
+   ```
+2. Run the script:
+   ```bash
+   ./run_tests.sh
+   ```
+
+### Windows
+
+1. Run the script:
+   ```cmd
+   run_tests.bat
+   ```
+
+## Prompts given to LLMs:
+
+This guide is only for reapplication purposes. If you are an assessor, please disregard this step.
+
+1. Copy and paste the assignment instructions (`rational_instructions.txt` or `roman_instructions.txt`) from Canvas. Note that there are no instructions for `Directions` and `Long Toss` challenges.
+2. Copy and paste the template code associated with the project you are trying to run (`directions.py` or `long_toss.py` or `rational.py` or `roman.py`) from Canvas.
+3. Send the following prompt to the LLM: "Implement the solution to template methods based on given instructions".
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 <!-- ## Installation Guide for Pytest
 
@@ -121,8 +176,8 @@ This guide is only for reapplication purposes. If you are an assessor, please di
 2. Copy Paste the template code associated with the project you are trying to run (directions.py or long_toss.py or rational.py or roman.py) from Canvas.
 3. Send the following prompt to the LLM: "Implement the solution to template methods based on given instructions".
 
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 # llm-comparison
