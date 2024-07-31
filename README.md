@@ -47,13 +47,7 @@ File naming convention: LLM tools were prompted to fill in the methods. For inst
 
 3. Activate the virtual environment:
 
-   - For Git Bash:
-
-     ```bash
-     source myenv/Scripts/activate.bat
-     ```
-
-   - For Command Prompt:
+   - For Git Bash and Command Prompt:
 
      ```cmd
      myenv\Scripts\activate.bat
