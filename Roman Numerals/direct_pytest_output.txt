@@ -1,25 +1,20 @@
-============================= test session starts =============================
-platform win32 -- Python 3.12.4, pytest-8.3.2, pluggy-1.5.0
-rootdir: C:\Users\vmascuser\Documents\decoding-llm-capabilities
+============================= test session starts ==============================
+platform darwin -- Python 3.11.5, pytest-8.3.2, pluggy-1.5.0
+rootdir: /Users/ibrahimkhalilov/Documents/decoding-llm-capabilities
 configfile: pyproject.toml
-collected 15 items
+collected 0 items / 1 error
 
-tests\test_unit_tests.py F..............                                 [100%]
-
-================================== FAILURES ===================================
-_______________________ test_roman_chat_gpt4o_new_test1 _______________________
-
-    def test_roman_chat_gpt4o_new_test1():
->       roman_chat_gpt4o_new.test1()
-
-tests\test_unit_tests.py:6: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-
-    def test1():
->       assert valid_numeral("XIV") == True, "Test case 1 failed"
-E       AssertionError: Test case 1 failed
-
-roman_chat_gpt4o_new.py:65: AssertionError
-=========================== short test summary info ===========================
-FAILED tests\test_unit_tests.py::test_roman_chat_gpt4o_new_test1 - AssertionE...
-======================== 1 failed, 14 passed in 0.03s =========================
+==================================== ERRORS ====================================
+___________ ERROR collecting Roman Numerals/tests/test_unit_tests.py ___________
+ImportError while importing test module '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/tests/test_unit_tests.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+Roman Numerals/tests/test_unit_tests.py:2: in <module>
+    import roman_chat_gpt4o_new
+E   ModuleNotFoundError: No module named 'roman_chat_gpt4o_new'
+=========================== short test summary info ============================
+ERROR Roman Numerals/tests/test_unit_tests.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+=============================== 1 error in 0.10s ===============================
