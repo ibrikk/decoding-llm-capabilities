@@ -1,0 +1,19 @@
+# Python compiled files
+__pycache__/
+*.pyc
+
+# Environment directories
+myenv/
+
+# Specific files (can be excluded if you prefer to exclude the whole directory)
+# Here, I assume you want to exclude any file inside the "Directions", "Long Toss", and "Rational Numbers" directories
+Directions/*.*
+Long Toss/*.*
+Rational Numbers/*.*
+
+# Ignore batch and shell scripts
+*.bat
+*.sh
+
+# Test output files
+pytest_output.txt
