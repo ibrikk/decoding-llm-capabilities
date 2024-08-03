@@ -1,52 +1,25 @@
 ============================= test session starts ==============================
-platform darwin -- Python 3.11.4, pytest-8.2.2, pluggy-1.5.0
+platform darwin -- Python 3.11.5, pytest-8.3.2, pluggy-1.5.0
 rootdir: /Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals
-collected 135 items
+collected 120 items
 
-test_my_solution.py .F..F.FF...F....FF.............F..............F....F [ 38%]
-F.F...F...F....F.....F.FF.FFF....F.FF........F.................F.....F.. [ 91%]
-F..F.....F.                                                              [100%]
+test_my_solution.py ...F.F.....F.F..................................F... [ 43%]
+.FFFF..........F.F.....F.F...............................F.......F.F     [100%]
 
 =================================== FAILURES ===================================
-_________________________ test_XVIII[roman_chat_gpt3] __________________________
+________________________ test_XVIII[roman_claude_haiku] ________________________
 
-module = <module 'roman_chat_gpt3' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt3.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_XVIII(module):
->       assert module.valid_numeral("XVIII") == True, "XVIII should be True"
-E       AssertionError: XVIII should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe8180>('XVIII')
-E        +    where <function valid_numeral at 0x10ebe8180> = <module 'roman_chat_gpt3' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt3.py'>.valid_numeral
-
-test_my_solution.py:16: AssertionError
-_______________________ test_XVIII[roman_claude3_haiku] ________________________
-
-module = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>
+module = <module 'roman_claude_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude_haiku.py'>
 
     @pytest.mark.parametrize("module", modules_to_test)
     def test_XVIII(module):
 >       assert module.valid_numeral("XVIII") == True, "XVIII should be True"
 E       AssertionError: XVIII should be True
 E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe8d60>('XVIII')
-E        +    where <function valid_numeral at 0x10ebe8d60> = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>.valid_numeral
+E        +  where False = <function valid_numeral at 0x1115b2980>('XVIII')
+E        +    where <function valid_numeral at 0x1115b2980> = <module 'roman_claude_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude_haiku.py'>.valid_numeral
 
-test_my_solution.py:16: AssertionError
-_______________________ test_XVIII[roman_github_copilot] _______________________
-
-module = <module 'roman_github_copilot' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_github_copilot.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_XVIII(module):
->       assert module.valid_numeral("XVIII") == True, "XVIII should be True"
-E       AssertionError: XVIII should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe94e0>('XVIII')
-E        +    where <function valid_numeral at 0x10ebe94e0> = <module 'roman_github_copilot' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_github_copilot.py'>.valid_numeral
-
-test_my_solution.py:16: AssertionError
+test_my_solution.py:15: AssertionError
 ___________________________ test_XVIII[roman_gemini] ___________________________
 
 module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>
@@ -56,23 +29,23 @@ module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-
 >       assert module.valid_numeral("XVIII") == True, "XVIII should be True"
 E       AssertionError: XVIII should be True
 E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe9760>('XVIII')
-E        +    where <function valid_numeral at 0x10ebe9760> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
+E        +  where False = <function valid_numeral at 0x1115b3600>('XVIII')
+E        +    where <function valid_numeral at 0x1115b3600> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
 
-test_my_solution.py:16: AssertionError
-________________________ test_MCXIV[roman_claude3_opus] ________________________
+test_my_solution.py:15: AssertionError
+________________________ test_MCXIV[roman_claude_haiku] ________________________
 
-module = <module 'roman_claude3_opus' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_opus.py'>
+module = <module 'roman_claude_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude_haiku.py'>
 
     @pytest.mark.parametrize("module", modules_to_test)
     def test_MCXIV(module):
 >       assert module.valid_numeral("MCXIV") == True, "MCXIV should be True"
 E       AssertionError: MCXIV should be True
 E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe82c0>('MCXIV')
-E        +    where <function valid_numeral at 0x10ebe82c0> = <module 'roman_claude3_opus' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_opus.py'>.valid_numeral
+E        +  where False = <function valid_numeral at 0x1115b2980>('MCXIV')
+E        +    where <function valid_numeral at 0x1115b2980> = <module 'roman_claude_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude_haiku.py'>.valid_numeral
 
-test_my_solution.py:20: AssertionError
+test_my_solution.py:19: AssertionError
 ___________________________ test_MCXIV[roman_gemini] ___________________________
 
 module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>
@@ -82,75 +55,10 @@ module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-
 >       assert module.valid_numeral("MCXIV") == True, "MCXIV should be True"
 E       AssertionError: MCXIV should be True
 E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe9760>('MCXIV')
-E        +    where <function valid_numeral at 0x10ebe9760> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
+E        +  where False = <function valid_numeral at 0x1115b3600>('MCXIV')
+E        +    where <function valid_numeral at 0x1115b3600> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
 
-test_my_solution.py:20: AssertionError
-_________________________ test_MCXIV[roman_chat_gpt4o] _________________________
-
-module = <module 'roman_chat_gpt4o' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4o.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_MCXIV(module):
->       assert module.valid_numeral("MCXIV") == True, "MCXIV should be True"
-E       AssertionError: MCXIV should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe99e0>('MCXIV')
-E        +    where <function valid_numeral at 0x10ebe99e0> = <module 'roman_chat_gpt4o' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4o.py'>.valid_numeral
-
-test_my_solution.py:20: AssertionError
-________________________ test_CIL[roman_claude3_haiku] _________________________
-
-module = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_CIL(module):
->       assert module.valid_numeral("CIL") == False, "CIL should be False (I can't precede L)"
-E       AssertionError: CIL should be False (I can't precede L)
-E       assert True == False
-E        +  where True = <function valid_numeral at 0x10ebe8d60>('CIL')
-E        +    where <function valid_numeral at 0x10ebe8d60> = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>.valid_numeral
-
-test_my_solution.py:28: AssertionError
-__________________________ test_III[roman_chat_gpt3] ___________________________
-
-module = <module 'roman_chat_gpt3' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt3.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_III(module):
->       assert module.valid_numeral("III") == True, "III should be True"
-E       AssertionError: III should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe8180>('III')
-E        +    where <function valid_numeral at 0x10ebe8180> = <module 'roman_chat_gpt3' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt3.py'>.valid_numeral
-
-test_my_solution.py:36: AssertionError
-________________________ test_III[roman_github_copilot] ________________________
-
-module = <module 'roman_github_copilot' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_github_copilot.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_III(module):
->       assert module.valid_numeral("III") == True, "III should be True"
-E       AssertionError: III should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe94e0>('III')
-E        +    where <function valid_numeral at 0x10ebe94e0> = <module 'roman_github_copilot' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_github_copilot.py'>.valid_numeral
-
-test_my_solution.py:36: AssertionError
-____________________________ test_III[roman_gemini] ____________________________
-
-module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_III(module):
->       assert module.valid_numeral("III") == True, "III should be True"
-E       AssertionError: III should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe9760>('III')
-E        +    where <function valid_numeral at 0x10ebe9760> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
-
-test_my_solution.py:36: AssertionError
+test_my_solution.py:19: AssertionError
 __________________________ test_LLL[roman_chat_gpt4] ___________________________
 
 module = <module 'roman_chat_gpt4' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4.py'>
@@ -160,23 +68,23 @@ module = <module 'roman_chat_gpt4' from '/Users/ibrahimkhalilov/Documents/decodi
 >       assert module.valid_numeral("LLL") == False, "LLL should be False (three straight 5*10^n symbols)"
 E       AssertionError: LLL should be False (three straight 5*10^n symbols)
 E       assert True == False
-E        +  where True = <function valid_numeral at 0x10ebe8040>('LLL')
-E        +    where <function valid_numeral at 0x10ebe8040> = <module 'roman_chat_gpt4' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4.py'>.valid_numeral
+E        +  where True = <function valid_numeral at 0x1115b1440>('LLL')
+E        +    where <function valid_numeral at 0x1115b1440> = <module 'roman_chat_gpt4' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4.py'>.valid_numeral
 
-test_my_solution.py:40: AssertionError
-________________________ test_LLL[roman_claude3_haiku] _________________________
+test_my_solution.py:39: AssertionError
+____________________________ test_LLL[roman_gemini] ____________________________
 
-module = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>
+module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>
 
     @pytest.mark.parametrize("module", modules_to_test)
     def test_LLL(module):
 >       assert module.valid_numeral("LLL") == False, "LLL should be False (three straight 5*10^n symbols)"
 E       AssertionError: LLL should be False (three straight 5*10^n symbols)
 E       assert True == False
-E        +  where True = <function valid_numeral at 0x10ebe8d60>('LLL')
-E        +    where <function valid_numeral at 0x10ebe8d60> = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>.valid_numeral
+E        +  where True = <function valid_numeral at 0x1115b3600>('LLL')
+E        +    where <function valid_numeral at 0x1115b3600> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
 
-test_my_solution.py:40: AssertionError
+test_my_solution.py:39: AssertionError
 __________________________ test_LLL[roman_chat_gpt4o] __________________________
 
 module = <module 'roman_chat_gpt4o' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4o.py'>
@@ -186,75 +94,49 @@ module = <module 'roman_chat_gpt4o' from '/Users/ibrahimkhalilov/Documents/decod
 >       assert module.valid_numeral("LLL") == False, "LLL should be False (three straight 5*10^n symbols)"
 E       AssertionError: LLL should be False (three straight 5*10^n symbols)
 E       assert True == False
-E        +  where True = <function valid_numeral at 0x10ebe99e0>('LLL')
-E        +    where <function valid_numeral at 0x10ebe99e0> = <module 'roman_chat_gpt4o' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4o.py'>.valid_numeral
+E        +  where True = <function valid_numeral at 0x1115b3e20>('LLL')
+E        +    where <function valid_numeral at 0x1115b3e20> = <module 'roman_chat_gpt4o' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4o.py'>.valid_numeral
 
-test_my_solution.py:40: AssertionError
-_______________________ test_empty[roman_claude3_haiku] ________________________
+test_my_solution.py:39: AssertionError
+________________________ test_LLL[roman_chat_gpt4omini] ________________________
 
-module = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>
+module = <module 'roman_chat_gpt4omini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4omini.py'>
+
+    @pytest.mark.parametrize("module", modules_to_test)
+    def test_LLL(module):
+>       assert module.valid_numeral("LLL") == False, "LLL should be False (three straight 5*10^n symbols)"
+E       AssertionError: LLL should be False (three straight 5*10^n symbols)
+E       assert True == False
+E        +  where True = <function valid_numeral at 0x1115d47c0>('LLL')
+E        +    where <function valid_numeral at 0x1115d47c0> = <module 'roman_chat_gpt4omini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4omini.py'>.valid_numeral
+
+test_my_solution.py:39: AssertionError
+_________________________ test_empty[roman_chat_gpt4] __________________________
+
+module = <module 'roman_chat_gpt4' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4.py'>
 
     @pytest.mark.parametrize("module", modules_to_test)
     def test_empty(module):
 >       assert module.valid_numeral("") == False, "Empty string should be False (no empty string permitted)"
 E       AssertionError: Empty string should be False (no empty string permitted)
 E       assert True == False
-E        +  where True = <function valid_numeral at 0x10ebe8d60>('')
-E        +    where <function valid_numeral at 0x10ebe8d60> = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>.valid_numeral
+E        +  where True = <function valid_numeral at 0x1115b1440>('')
+E        +    where <function valid_numeral at 0x1115b1440> = <module 'roman_chat_gpt4' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4.py'>.valid_numeral
 
-test_my_solution.py:44: AssertionError
-__________________________ test_3999[roman_chat_gpt3] __________________________
+test_my_solution.py:43: AssertionError
+________________________ test_3999[roman_claude_haiku] _________________________
 
-module = <module 'roman_chat_gpt3' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt3.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_3999(module):
->       assert module.valid_numeral("MMMCMXCIX") == True, "MMMCMXCIX should be True"
-E       AssertionError: MMMCMXCIX should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe8180>('MMMCMXCIX')
-E        +    where <function valid_numeral at 0x10ebe8180> = <module 'roman_chat_gpt3' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt3.py'>.valid_numeral
-
-test_my_solution.py:48: AssertionError
-_______________________ test_3999[roman_claude3_sonnet] ________________________
-
-module = <module 'roman_claude3_sonnet' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_sonnet.py'>
+module = <module 'roman_claude_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude_haiku.py'>
 
     @pytest.mark.parametrize("module", modules_to_test)
     def test_3999(module):
 >       assert module.valid_numeral("MMMCMXCIX") == True, "MMMCMXCIX should be True"
 E       AssertionError: MMMCMXCIX should be True
 E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe8b80>('MMMCMXCIX')
-E        +    where <function valid_numeral at 0x10ebe8b80> = <module 'roman_claude3_sonnet' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_sonnet.py'>.valid_numeral
+E        +  where False = <function valid_numeral at 0x1115b2980>('MMMCMXCIX')
+E        +    where <function valid_numeral at 0x1115b2980> = <module 'roman_claude_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude_haiku.py'>.valid_numeral
 
-test_my_solution.py:48: AssertionError
-________________________ test_3999[roman_claude3_haiku] ________________________
-
-module = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_3999(module):
->       assert module.valid_numeral("MMMCMXCIX") == True, "MMMCMXCIX should be True"
-E       AssertionError: MMMCMXCIX should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe8d60>('MMMCMXCIX')
-E        +    where <function valid_numeral at 0x10ebe8d60> = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>.valid_numeral
-
-test_my_solution.py:48: AssertionError
-_______________________ test_3999[roman_github_copilot] ________________________
-
-module = <module 'roman_github_copilot' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_github_copilot.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_3999(module):
->       assert module.valid_numeral("MMMCMXCIX") == True, "MMMCMXCIX should be True"
-E       AssertionError: MMMCMXCIX should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe94e0>('MMMCMXCIX')
-E        +    where <function valid_numeral at 0x10ebe94e0> = <module 'roman_github_copilot' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_github_copilot.py'>.valid_numeral
-
-test_my_solution.py:48: AssertionError
+test_my_solution.py:47: AssertionError
 ___________________________ test_3999[roman_gemini] ____________________________
 
 module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>
@@ -264,49 +146,23 @@ module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-
 >       assert module.valid_numeral("MMMCMXCIX") == True, "MMMCMXCIX should be True"
 E       AssertionError: MMMCMXCIX should be True
 E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe9760>('MMMCMXCIX')
-E        +    where <function valid_numeral at 0x10ebe9760> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
+E        +  where False = <function valid_numeral at 0x1115b3600>('MMMCMXCIX')
+E        +    where <function valid_numeral at 0x1115b3600> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
 
-test_my_solution.py:48: AssertionError
-_________________________ test_3999[roman_chat_gpt4o] __________________________
+test_my_solution.py:47: AssertionError
+_______________________ test_MDCLXVI[roman_claude_haiku] _______________________
 
-module = <module 'roman_chat_gpt4o' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4o.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_3999(module):
->       assert module.valid_numeral("MMMCMXCIX") == True, "MMMCMXCIX should be True"
-E       AssertionError: MMMCMXCIX should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe99e0>('MMMCMXCIX')
-E        +    where <function valid_numeral at 0x10ebe99e0> = <module 'roman_chat_gpt4o' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4o.py'>.valid_numeral
-
-test_my_solution.py:48: AssertionError
-______________________ test_MDCLXVI[roman_claude3_haiku] _______________________
-
-module = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>
+module = <module 'roman_claude_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude_haiku.py'>
 
     @pytest.mark.parametrize("module", modules_to_test)
     def test_MDCLXVI(module):
 >       assert module.valid_numeral("MDCLXVI") == True, "MDCLXVI should be True"
 E       AssertionError: MDCLXVI should be True
 E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe8d60>('MDCLXVI')
-E        +    where <function valid_numeral at 0x10ebe8d60> = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>.valid_numeral
+E        +  where False = <function valid_numeral at 0x1115b2980>('MDCLXVI')
+E        +    where <function valid_numeral at 0x1115b2980> = <module 'roman_claude_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude_haiku.py'>.valid_numeral
 
-test_my_solution.py:52: AssertionError
-______________________ test_MDCLXVI[roman_github_copilot] ______________________
-
-module = <module 'roman_github_copilot' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_github_copilot.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_MDCLXVI(module):
->       assert module.valid_numeral("MDCLXVI") == True, "MDCLXVI should be True"
-E       AssertionError: MDCLXVI should be True
-E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe94e0>('MDCLXVI')
-E        +    where <function valid_numeral at 0x10ebe94e0> = <module 'roman_github_copilot' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_github_copilot.py'>.valid_numeral
-
-test_my_solution.py:52: AssertionError
+test_my_solution.py:51: AssertionError
 __________________________ test_MDCLXVI[roman_gemini] __________________________
 
 module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>
@@ -316,109 +172,10 @@ module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-
 >       assert module.valid_numeral("MDCLXVI") == True, "MDCLXVI should be True"
 E       AssertionError: MDCLXVI should be True
 E       assert False == True
-E        +  where False = <function valid_numeral at 0x10ebe9760>('MDCLXVI')
-E        +    where <function valid_numeral at 0x10ebe9760> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
+E        +  where False = <function valid_numeral at 0x1115b3600>('MDCLXVI')
+E        +    where <function valid_numeral at 0x1115b3600> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
 
-test_my_solution.py:52: AssertionError
-__________________________ test_mdclxvi[roman_gemini] __________________________
-
-module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_mdclxvi(module):
->       assert module.valid_numeral("mdclxvi") == False, "mdclxvi should be False (capital letters needed)"
-
-test_my_solution.py:56: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-numeral = 'mdclxvi'
-
-    def valid_numeral(numeral):
-        """
-        Checks if the given string is a valid Roman numeral.
-    
-        This function implements various rules to determine the validity of the numeral.
-        """
-    
-        # Check if empty or contains non-alphabetic characters (Rule 1)
-        if not numeral.isalpha() or not numeral:
-            return False
-    
-        # Check if contains only valid characters (Rule 2)
-        valid_chars = {"I", "V", "X", "L", "C", "D", "M"}
-        if set(numeral) > valid_chars:
-            return False
-    
-        # Check for no more than three consecutive repeats (Rule 3)
-        for i in range(len(numeral) - 3):
-            if numeral[i] == numeral[i + 1] == numeral[i + 2] == numeral[i + 3]:
-                return False
-    
-        # Check for correct order except for valid subtractions (Rule 4)
-        previous_value = 0
-        for char in numeral:
->           current_value = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}[
-                char
-            ]
-E           KeyError: 'm'
-
-roman_gemini.py:31: KeyError
-____________________________ test_XiV[roman_gemini] ____________________________
-
-module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_XiV(module):
->       assert module.valid_numeral("XiV") == False, "XiV should be False (all caps needed)"
-
-test_my_solution.py:64: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-numeral = 'XiV'
-
-    def valid_numeral(numeral):
-        """
-        Checks if the given string is a valid Roman numeral.
-    
-        This function implements various rules to determine the validity of the numeral.
-        """
-    
-        # Check if empty or contains non-alphabetic characters (Rule 1)
-        if not numeral.isalpha() or not numeral:
-            return False
-    
-        # Check if contains only valid characters (Rule 2)
-        valid_chars = {"I", "V", "X", "L", "C", "D", "M"}
-        if set(numeral) > valid_chars:
-            return False
-    
-        # Check for no more than three consecutive repeats (Rule 3)
-        for i in range(len(numeral) - 3):
-            if numeral[i] == numeral[i + 1] == numeral[i + 2] == numeral[i + 3]:
-                return False
-    
-        # Check for correct order except for valid subtractions (Rule 4)
-        previous_value = 0
-        for char in numeral:
->           current_value = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}[
-                char
-            ]
-E           KeyError: 'i'
-
-roman_gemini.py:31: KeyError
-_________________________ test_XD[roman_claude3_haiku] _________________________
-
-module = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_XD(module):
->       assert module.valid_numeral("XD") == False, "XD should be False (X can't precede D)"
-E       AssertionError: XD should be False (X can't precede D)
-E       assert True == False
-E        +  where True = <function valid_numeral at 0x10ebe8d60>('XD')
-E        +    where <function valid_numeral at 0x10ebe8d60> = <module 'roman_claude3_haiku' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_claude3_haiku.py'>.valid_numeral
-
-test_my_solution.py:68: AssertionError
+test_my_solution.py:51: AssertionError
 ____________________________ test_XD[roman_gemini] _____________________________
 
 module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>
@@ -428,23 +185,10 @@ module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-
 >       assert module.valid_numeral("XD") == False, "XD should be False (X can't precede D)"
 E       AssertionError: XD should be False (X can't precede D)
 E       assert True == False
-E        +  where True = <function valid_numeral at 0x10ebe9760>('XD')
-E        +    where <function valid_numeral at 0x10ebe9760> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
+E        +  where True = <function valid_numeral at 0x1115b3600>('XD')
+E        +    where <function valid_numeral at 0x1115b3600> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
 
-test_my_solution.py:68: AssertionError
-___________________________ test_VX[roman_chat_gpt3] ___________________________
-
-module = <module 'roman_chat_gpt3' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt3.py'>
-
-    @pytest.mark.parametrize("module", modules_to_test)
-    def test_VX(module):
->       assert module.valid_numeral("VX") == False, "VX should be False (V can't precede X)"
-E       AssertionError: VX should be False (V can't precede X)
-E       assert True == False
-E        +  where True = <function valid_numeral at 0x10ebe8180>('VX')
-E        +    where <function valid_numeral at 0x10ebe8180> = <module 'roman_chat_gpt3' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt3.py'>.valid_numeral
-
-test_my_solution.py:72: AssertionError
+test_my_solution.py:67: AssertionError
 ____________________________ test_VX[roman_gemini] _____________________________
 
 module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>
@@ -454,145 +198,143 @@ module = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-
 >       assert module.valid_numeral("VX") == False, "VX should be False (V can't precede X)"
 E       AssertionError: VX should be False (V can't precede X)
 E       assert True == False
-E        +  where True = <function valid_numeral at 0x10ebe9760>('VX')
-E        +    where <function valid_numeral at 0x10ebe9760> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
+E        +  where True = <function valid_numeral at 0x1115b3600>('VX')
+E        +    where <function valid_numeral at 0x1115b3600> = <module 'roman_gemini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_gemini.py'>.valid_numeral
 
-test_my_solution.py:72: AssertionError
+test_my_solution.py:71: AssertionError
+________________________ test_VX[roman_chat_gpt4omini] _________________________
+
+module = <module 'roman_chat_gpt4omini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4omini.py'>
+
+    @pytest.mark.parametrize("module", modules_to_test)
+    def test_VX(module):
+>       assert module.valid_numeral("VX") == False, "VX should be False (V can't precede X)"
+E       AssertionError: VX should be False (V can't precede X)
+E       assert True == False
+E        +  where True = <function valid_numeral at 0x1115d47c0>('VX')
+E        +    where <function valid_numeral at 0x1115d47c0> = <module 'roman_chat_gpt4omini' from '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/roman_chat_gpt4omini.py'>.valid_numeral
+
+test_my_solution.py:71: AssertionError
 ==================================== PASSES ====================================
 =========================== short test summary info ============================
 PASSED test_my_solution.py::test_XVIII[roman_chat_gpt4]
-PASSED test_my_solution.py::test_XVIII[roman_claude3_opus]
-PASSED test_my_solution.py::test_XVIII[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_XVIII[roman_claude_free]
+PASSED test_my_solution.py::test_XVIII[roman_claude_opus]
+PASSED test_my_solution.py::test_XVIII[roman_claude_sonnet]
+PASSED test_my_solution.py::test_XVIII[roman_github_copilot]
 PASSED test_my_solution.py::test_XVIII[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_XVIII[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_MCXIV[roman_chat_gpt4]
-PASSED test_my_solution.py::test_MCXIV[roman_chat_gpt3]
-PASSED test_my_solution.py::test_MCXIV[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_MCXIV[roman_claude3_haiku]
-PASSED test_my_solution.py::test_MCXIV[roman_claude_free]
+PASSED test_my_solution.py::test_MCXIV[roman_claude_opus]
+PASSED test_my_solution.py::test_MCXIV[roman_claude_sonnet]
 PASSED test_my_solution.py::test_MCXIV[roman_github_copilot]
+PASSED test_my_solution.py::test_MCXIV[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_MCXIV[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_CCCC[roman_chat_gpt4]
-PASSED test_my_solution.py::test_CCCC[roman_chat_gpt3]
-PASSED test_my_solution.py::test_CCCC[roman_claude3_opus]
-PASSED test_my_solution.py::test_CCCC[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_CCCC[roman_claude3_haiku]
-PASSED test_my_solution.py::test_CCCC[roman_claude_free]
+PASSED test_my_solution.py::test_CCCC[roman_claude_opus]
+PASSED test_my_solution.py::test_CCCC[roman_claude_sonnet]
+PASSED test_my_solution.py::test_CCCC[roman_claude_haiku]
 PASSED test_my_solution.py::test_CCCC[roman_github_copilot]
 PASSED test_my_solution.py::test_CCCC[roman_gemini]
 PASSED test_my_solution.py::test_CCCC[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_CCCC[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_CIL[roman_chat_gpt4]
-PASSED test_my_solution.py::test_CIL[roman_chat_gpt3]
-PASSED test_my_solution.py::test_CIL[roman_claude3_opus]
-PASSED test_my_solution.py::test_CIL[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_CIL[roman_claude_free]
+PASSED test_my_solution.py::test_CIL[roman_claude_opus]
+PASSED test_my_solution.py::test_CIL[roman_claude_sonnet]
+PASSED test_my_solution.py::test_CIL[roman_claude_haiku]
 PASSED test_my_solution.py::test_CIL[roman_github_copilot]
 PASSED test_my_solution.py::test_CIL[roman_gemini]
 PASSED test_my_solution.py::test_CIL[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_CIL[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_I[roman_chat_gpt4]
-PASSED test_my_solution.py::test_I[roman_chat_gpt3]
-PASSED test_my_solution.py::test_I[roman_claude3_opus]
-PASSED test_my_solution.py::test_I[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_I[roman_claude3_haiku]
-PASSED test_my_solution.py::test_I[roman_claude_free]
+PASSED test_my_solution.py::test_I[roman_claude_opus]
+PASSED test_my_solution.py::test_I[roman_claude_sonnet]
+PASSED test_my_solution.py::test_I[roman_claude_haiku]
 PASSED test_my_solution.py::test_I[roman_github_copilot]
 PASSED test_my_solution.py::test_I[roman_gemini]
 PASSED test_my_solution.py::test_I[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_I[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_III[roman_chat_gpt4]
-PASSED test_my_solution.py::test_III[roman_claude3_opus]
-PASSED test_my_solution.py::test_III[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_III[roman_claude3_haiku]
-PASSED test_my_solution.py::test_III[roman_claude_free]
+PASSED test_my_solution.py::test_III[roman_claude_opus]
+PASSED test_my_solution.py::test_III[roman_claude_sonnet]
+PASSED test_my_solution.py::test_III[roman_claude_haiku]
+PASSED test_my_solution.py::test_III[roman_github_copilot]
+PASSED test_my_solution.py::test_III[roman_gemini]
 PASSED test_my_solution.py::test_III[roman_chat_gpt4o]
-PASSED test_my_solution.py::test_LLL[roman_chat_gpt3]
-PASSED test_my_solution.py::test_LLL[roman_claude3_opus]
-PASSED test_my_solution.py::test_LLL[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_LLL[roman_claude_free]
+PASSED test_my_solution.py::test_III[roman_chat_gpt4omini]
+PASSED test_my_solution.py::test_LLL[roman_claude_opus]
+PASSED test_my_solution.py::test_LLL[roman_claude_sonnet]
+PASSED test_my_solution.py::test_LLL[roman_claude_haiku]
 PASSED test_my_solution.py::test_LLL[roman_github_copilot]
-PASSED test_my_solution.py::test_LLL[roman_gemini]
-PASSED test_my_solution.py::test_empty[roman_chat_gpt4]
-PASSED test_my_solution.py::test_empty[roman_chat_gpt3]
-PASSED test_my_solution.py::test_empty[roman_claude3_opus]
-PASSED test_my_solution.py::test_empty[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_empty[roman_claude_free]
+PASSED test_my_solution.py::test_empty[roman_claude_opus]
+PASSED test_my_solution.py::test_empty[roman_claude_sonnet]
+PASSED test_my_solution.py::test_empty[roman_claude_haiku]
 PASSED test_my_solution.py::test_empty[roman_github_copilot]
 PASSED test_my_solution.py::test_empty[roman_gemini]
 PASSED test_my_solution.py::test_empty[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_empty[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_3999[roman_chat_gpt4]
-PASSED test_my_solution.py::test_3999[roman_claude3_opus]
-PASSED test_my_solution.py::test_3999[roman_claude_free]
+PASSED test_my_solution.py::test_3999[roman_claude_opus]
+PASSED test_my_solution.py::test_3999[roman_claude_sonnet]
+PASSED test_my_solution.py::test_3999[roman_github_copilot]
+PASSED test_my_solution.py::test_3999[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_3999[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_MDCLXVI[roman_chat_gpt4]
-PASSED test_my_solution.py::test_MDCLXVI[roman_chat_gpt3]
-PASSED test_my_solution.py::test_MDCLXVI[roman_claude3_opus]
-PASSED test_my_solution.py::test_MDCLXVI[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_MDCLXVI[roman_claude_free]
+PASSED test_my_solution.py::test_MDCLXVI[roman_claude_opus]
+PASSED test_my_solution.py::test_MDCLXVI[roman_claude_sonnet]
+PASSED test_my_solution.py::test_MDCLXVI[roman_github_copilot]
 PASSED test_my_solution.py::test_MDCLXVI[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_MDCLXVI[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_mdclxvi[roman_chat_gpt4]
-PASSED test_my_solution.py::test_mdclxvi[roman_chat_gpt3]
-PASSED test_my_solution.py::test_mdclxvi[roman_claude3_opus]
-PASSED test_my_solution.py::test_mdclxvi[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_mdclxvi[roman_claude3_haiku]
-PASSED test_my_solution.py::test_mdclxvi[roman_claude_free]
+PASSED test_my_solution.py::test_mdclxvi[roman_claude_opus]
+PASSED test_my_solution.py::test_mdclxvi[roman_claude_sonnet]
+PASSED test_my_solution.py::test_mdclxvi[roman_claude_haiku]
 PASSED test_my_solution.py::test_mdclxvi[roman_github_copilot]
+PASSED test_my_solution.py::test_mdclxvi[roman_gemini]
 PASSED test_my_solution.py::test_mdclxvi[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_mdclxvi[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_X1II[roman_chat_gpt4]
-PASSED test_my_solution.py::test_X1II[roman_chat_gpt3]
-PASSED test_my_solution.py::test_X1II[roman_claude3_opus]
-PASSED test_my_solution.py::test_X1II[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_X1II[roman_claude3_haiku]
-PASSED test_my_solution.py::test_X1II[roman_claude_free]
+PASSED test_my_solution.py::test_X1II[roman_claude_opus]
+PASSED test_my_solution.py::test_X1II[roman_claude_sonnet]
+PASSED test_my_solution.py::test_X1II[roman_claude_haiku]
 PASSED test_my_solution.py::test_X1II[roman_github_copilot]
 PASSED test_my_solution.py::test_X1II[roman_gemini]
 PASSED test_my_solution.py::test_X1II[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_X1II[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_XiV[roman_chat_gpt4]
-PASSED test_my_solution.py::test_XiV[roman_chat_gpt3]
-PASSED test_my_solution.py::test_XiV[roman_claude3_opus]
-PASSED test_my_solution.py::test_XiV[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_XiV[roman_claude3_haiku]
-PASSED test_my_solution.py::test_XiV[roman_claude_free]
+PASSED test_my_solution.py::test_XiV[roman_claude_opus]
+PASSED test_my_solution.py::test_XiV[roman_claude_sonnet]
+PASSED test_my_solution.py::test_XiV[roman_claude_haiku]
 PASSED test_my_solution.py::test_XiV[roman_github_copilot]
+PASSED test_my_solution.py::test_XiV[roman_gemini]
 PASSED test_my_solution.py::test_XiV[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_XiV[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_XD[roman_chat_gpt4]
-PASSED test_my_solution.py::test_XD[roman_chat_gpt3]
-PASSED test_my_solution.py::test_XD[roman_claude3_opus]
-PASSED test_my_solution.py::test_XD[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_XD[roman_claude_free]
+PASSED test_my_solution.py::test_XD[roman_claude_opus]
+PASSED test_my_solution.py::test_XD[roman_claude_sonnet]
+PASSED test_my_solution.py::test_XD[roman_claude_haiku]
 PASSED test_my_solution.py::test_XD[roman_github_copilot]
 PASSED test_my_solution.py::test_XD[roman_chat_gpt4o]
+PASSED test_my_solution.py::test_XD[roman_chat_gpt4omini]
 PASSED test_my_solution.py::test_VX[roman_chat_gpt4]
-PASSED test_my_solution.py::test_VX[roman_claude3_opus]
-PASSED test_my_solution.py::test_VX[roman_claude3_sonnet]
-PASSED test_my_solution.py::test_VX[roman_claude3_haiku]
-PASSED test_my_solution.py::test_VX[roman_claude_free]
+PASSED test_my_solution.py::test_VX[roman_claude_opus]
+PASSED test_my_solution.py::test_VX[roman_claude_sonnet]
+PASSED test_my_solution.py::test_VX[roman_claude_haiku]
 PASSED test_my_solution.py::test_VX[roman_github_copilot]
 PASSED test_my_solution.py::test_VX[roman_chat_gpt4o]
-FAILED test_my_solution.py::test_XVIII[roman_chat_gpt3] - AssertionError: XVI...
-FAILED test_my_solution.py::test_XVIII[roman_claude3_haiku] - AssertionError:...
-FAILED test_my_solution.py::test_XVIII[roman_github_copilot] - AssertionError...
+FAILED test_my_solution.py::test_XVIII[roman_claude_haiku] - AssertionError: ...
 FAILED test_my_solution.py::test_XVIII[roman_gemini] - AssertionError: XVIII ...
-FAILED test_my_solution.py::test_MCXIV[roman_claude3_opus] - AssertionError: ...
+FAILED test_my_solution.py::test_MCXIV[roman_claude_haiku] - AssertionError: ...
 FAILED test_my_solution.py::test_MCXIV[roman_gemini] - AssertionError: MCXIV ...
-FAILED test_my_solution.py::test_MCXIV[roman_chat_gpt4o] - AssertionError: MC...
-FAILED test_my_solution.py::test_CIL[roman_claude3_haiku] - AssertionError: C...
-FAILED test_my_solution.py::test_III[roman_chat_gpt3] - AssertionError: III s...
-FAILED test_my_solution.py::test_III[roman_github_copilot] - AssertionError: ...
-FAILED test_my_solution.py::test_III[roman_gemini] - AssertionError: III shou...
 FAILED test_my_solution.py::test_LLL[roman_chat_gpt4] - AssertionError: LLL s...
-FAILED test_my_solution.py::test_LLL[roman_claude3_haiku] - AssertionError: L...
+FAILED test_my_solution.py::test_LLL[roman_gemini] - AssertionError: LLL shou...
 FAILED test_my_solution.py::test_LLL[roman_chat_gpt4o] - AssertionError: LLL ...
-FAILED test_my_solution.py::test_empty[roman_claude3_haiku] - AssertionError:...
-FAILED test_my_solution.py::test_3999[roman_chat_gpt3] - AssertionError: MMMC...
-FAILED test_my_solution.py::test_3999[roman_claude3_sonnet] - AssertionError:...
-FAILED test_my_solution.py::test_3999[roman_claude3_haiku] - AssertionError: ...
-FAILED test_my_solution.py::test_3999[roman_github_copilot] - AssertionError:...
+FAILED test_my_solution.py::test_LLL[roman_chat_gpt4omini] - AssertionError: ...
+FAILED test_my_solution.py::test_empty[roman_chat_gpt4] - AssertionError: Emp...
+FAILED test_my_solution.py::test_3999[roman_claude_haiku] - AssertionError: M...
 FAILED test_my_solution.py::test_3999[roman_gemini] - AssertionError: MMMCMXC...
-FAILED test_my_solution.py::test_3999[roman_chat_gpt4o] - AssertionError: MMM...
-FAILED test_my_solution.py::test_MDCLXVI[roman_claude3_haiku] - AssertionErro...
-FAILED test_my_solution.py::test_MDCLXVI[roman_github_copilot] - AssertionErr...
+FAILED test_my_solution.py::test_MDCLXVI[roman_claude_haiku] - AssertionError...
 FAILED test_my_solution.py::test_MDCLXVI[roman_gemini] - AssertionError: MDCL...
-FAILED test_my_solution.py::test_mdclxvi[roman_gemini] - KeyError: 'm'
-FAILED test_my_solution.py::test_XiV[roman_gemini] - KeyError: 'i'
-FAILED test_my_solution.py::test_XD[roman_claude3_haiku] - AssertionError: XD...
 FAILED test_my_solution.py::test_XD[roman_gemini] - AssertionError: XD should...
-FAILED test_my_solution.py::test_VX[roman_chat_gpt3] - AssertionError: VX sho...
 FAILED test_my_solution.py::test_VX[roman_gemini] - AssertionError: VX should...
-======================== 30 failed, 105 passed in 0.21s ========================
+FAILED test_my_solution.py::test_VX[roman_chat_gpt4omini] - AssertionError: V...
+======================== 16 failed, 104 passed in 0.16s ========================

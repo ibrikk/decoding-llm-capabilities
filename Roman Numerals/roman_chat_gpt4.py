@@ -1,65 +1,48 @@
 # -*- coding: utf-8 -*-
 """
 Detect valid Roman numerals
-
-Refer to the instructions on Canvas for more information.
-
-"I have neither given nor received help on this assignment."
-author: YOUR NAME HERE
 """
+
 __version__ = 1
 
 def valid_numeral(test_case):
-    # Rule 1: Check for only alphabetic characters
-    if not test_case.isalpha():
+    # Rule 1: Roman numeral must contain only valid Roman characters
+    if not all(char in 'IVXLCDM' for char in test_case):
         return False
     
-    # Rule 2: Check for valid Roman numeral characters
-    for char in test_case:
-        if char not in ['I', 'V', 'X', 'L', 'C', 'D', 'M']:
-            return False
+    # Rule 3: No four identical characters in a row
+    if 'IIII' in test_case or 'VVVV' in test_case or 'XXXX' in test_case or 'LLLL' in test_case or 'CCCC' in test_case or 'DDDD' in test_case or 'MMMM' in test_case:
+        return False
     
-    # Rule 3: No more than three of the same character in a row
-    count = 1
-    for i in range(1, len(test_case)):
-        if test_case[i] == test_case[i - 1]:
-            count += 1
-            if count > 3:
-                return False
-        else:
-            count = 1
-    
-    # Rule 4-7: Handling ordering and subtraction exceptions
-    # Convert Roman numerals to values for easier processing
-    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    # Rules for ordering and subtractive combination
+    # Rule 4, 5, 6: Correct order and valid subtractive combinations
+    roman_values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     previous_value = 0
+    total = 0
     for char in reversed(test_case):
-        value = values[char]
-        if value < previous_value:
-            # Rule 5 & 6: Check if subtraction is valid
-            if previous_value not in [value * 5, value * 10]:
+        value = roman_values[char]
+        if value >= previous_value:
+            total += value
+        else:
+            if char in ('I', 'X', 'C') and previous_value in (5*value, 10*value):
+                total -= value
+            else:
                 return False
         previous_value = value
     
     return True
 
-
 def main():
-    # Here is where you will call your test cases
-    print(valid_numeral("XVIII"))  # True
-    print(valid_numeral("MCXIV"))  # True
-    print(valid_numeral("CCCC"))   # False
-    print(valid_numeral("CIL"))    # False
-    print(valid_numeral("M2C"))    # False
-    print(valid_numeral("ASDF"))   # False
-    print(valid_numeral("VL"))     # False
-    print(valid_numeral("XXX"))    # True
-    print(valid_numeral("LLL"))    # False
-
-###############################################################    
-
-# The test functions are demonstrated in the main function rather than as separate functions
-# This approach keeps the example concise and focused on the validation logic
+    # Test cases are run from here
+    print("Test Case 1 (XVIII):", valid_numeral('XVIII'))
+    print("Test Case 2 (MCXIV):", valid_numeral('MCXIV'))
+    print("Test Case 3 (CCCC):", valid_numeral('CCCC'))
+    print("Test Case 4 (CIL):", valid_numeral('CIL'))
+    print("Test Case 5 (M2C):", valid_numeral('M2C'))
+    print("Test Case 6 (ASDF):", valid_numeral('ASDF'))
+    print("Test Case 7 (VL):", valid_numeral('VL'))
+    print("Test Case 8 (XXX):", valid_numeral('XXX'))
+    print("Test Case 9 (LLL):", valid_numeral('LLL'))
 
 if __name__ == "__main__":
-    main()    
+    main()

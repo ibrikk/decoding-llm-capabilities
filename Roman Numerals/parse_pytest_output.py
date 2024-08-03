@@ -2,11 +2,11 @@ import os
 
 all_modules = [
     "roman_chat_gpt4",
-    "roman_chat_gpt3",
-    "roman_claude3_opus",
-    "roman_claude3_sonnet",
-    "roman_claude3_haiku",
-    "roman_claude_free",
+    "roman_chat_gpt4o",
+    "roman_chat_gpt4omini",
+    "roman_claude_opus",
+    "roman_claude_sonnet",
+    "roman_claude_haiku",
     "roman_github_copilot",
     "roman_gemini"
 ]
