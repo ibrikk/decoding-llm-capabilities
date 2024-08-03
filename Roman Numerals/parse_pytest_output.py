@@ -2,15 +2,8 @@ import os
 
 all_modules = [
     "roman_chat_gpt4",
-    "roman_chat_gpt3",
-    "roman_claude3_opus",
-    "roman_claude3_sonnet",
-    "roman_claude3_haiku",
-    "roman_claude_free",
-    "roman_github_copilot",
-    "roman_gemini",
     "roman_chat_gpt4o",
-    "roman_chat_gpt4o_new"
+    "roman_chat_gpt4omini",
 ]
 
 def count_failures(output_file, test_type):
@@ -47,24 +40,27 @@ def count_failures(output_file, test_type):
 def parse_mutation_results(result_file):
     killed = 0
     survived = 0
+
     with open(result_file, 'r') as file:
         lines = file.readlines()
-
+    
     for line in lines:
         if "ok_killed" in line:
             killed += 1
         elif "bad_survived" in line:
             survived += 1
 
-    total = killed + survived
-    mutation_score = (killed / total) * 100 if total > 0 else 0
+    mutation_score = (killed / (killed + survived)) * 100 if (killed + survived) > 0 else 0
+
     return killed, survived, mutation_score
 
 def main():
+    base_dir = "/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals"
+
     # Define the output files
-    reference_output_file = 'reference_pytest_output.txt'
-    direct_output_file = 'direct_pytest_output.txt'
-    mutation_result_file = 'mutation_test_results.txt'
+    reference_output_file = os.path.join(base_dir, 'reference_pytest_output.txt')
+    direct_output_file = os.path.join(base_dir, 'direct_pytest_output.txt')
+    mutation_result_file = os.path.join(base_dir, 'mutation_test_results.txt')
     
     # Count failures
     reference_failure_counts = count_failures(reference_output_file, "reference")
@@ -77,12 +73,9 @@ def main():
         dir_tests = direct_failure_counts.get(module, 0)
         print(f"{module}: {ref_tests} failed reference tests, {dir_tests} failed unit tests")
 
-    # Parse mutation results
+    # Parse and print mutation results
     killed, survived, mutation_score = parse_mutation_results(mutation_result_file)
-    print("\nMutation Testing Results:")
-    print(f"Killed mutants: {killed}")
-    print(f"Survived mutants: {survived}")
-    print(f"Mutation Score: {mutation_score:.2f}%")
+    print(f"\nMutation Testing Results:\nKilled: {killed}\nSurvived: {survived}\nMutation Score: {mutation_score:.2f}%")
 
 if __name__ == "__main__":
     main()

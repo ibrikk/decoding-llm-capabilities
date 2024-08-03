@@ -4,87 +4,151 @@ Detect valid Roman numerals
 """
 __version__ = 1
 
+# Function to validate Roman numeral
 def valid_numeral(test_case):
-    # Rule 1: Check if the string contains only alphabetic characters
     if not test_case.isalpha():
         return False
-    # Rule 2: Check if the string contains only valid Roman numeral characters
-    valid_characters = {'I', 'V', 'X', 'L', 'C', 'D', 'M'}
-    if any(char not in valid_characters for char in test_case):
+    if not all(char in "IVXLCDM" for char in test_case):
         return False
-    # Rule 3: Check for no more than three of the same character in a row
-    import re
-    if re.search(r'(IIII|VVVV|XXXX|LLLL|CCCC|DDDD|MMMM)', test_case):
+    if any(test_case.count(char * 4) > 0 for char in "IVXLCDM"):
         return False
-    # Rule 4: Check for valid order of numerals (large to small unless subtractive notation is used)
     values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    max_seen = 1001  # Any number larger than 1000
-    for char in test_case:
-        if values[char] > max_seen:
-            return False
-        max_seen = values[char]
-    # Additional Rules 5, 6, and 7 will be handled here
-    # (For simplicity, not implemented in this step-by-step example)
+    last_value = float('inf')
+    repetitions = 1
+
+    for i in range(len(test_case)):
+        current_value = values[test_case[i]]
+        if i > 0 and current_value > last_value:
+            if last_value in {5, 50, 500}:
+                return False
+            if last_value * 10 < current_value or last_value * 2 < current_value:
+                return False
+            repetitions = 1
+        else:
+            if current_value == last_value:
+                repetitions += 1
+                if repetitions > 3:
+                    return False
+            else:
+                repetitions = 1
+
+        last_value = current_value
+
     return True
 
+# Function to run all tests
 def main():
-    test1()
-    test2()
-    test3()
-    test4()
-    test5()
-    test6()
-    test7()
+    # Test cases for rule 1
+    print(test1())
+    print(test2())
+    # Test cases for rule 2
+    print(test3())
+    print(test4())
+    # Test cases for rule 3
+    print(test5())
+    print(test6())
+    # Test cases for rules 4-7
+    print(test7())
+    print(test8())
+    print(test9())
+    print(test10())
+    print(test11())
+    print(test12())
+    print(test13())
+    print(test14())
+    print(test15())
+
+# Test case functions
+
+# Rule 1: Check that the string contains only alphabetic characters
+def test1():
+    assert valid_numeral("XIV") == True, "Test case 1 failed"
+    assert valid_numeral("X1V") == False, "Test case 1 failed"
+    return "Test case 1 passed"
+
+def test2():
+    assert valid_numeral("MMMCMXCIX") == True, "Test case 2 failed"
+    assert valid_numeral("MMMCMXCIX!") == False, "Test case 2 failed"
+    return "Test case 2 passed"
+
+# Rule 2: Check that the string only contains valid Roman numeral characters
+def test3():
+    assert valid_numeral("XIV") == True, "Test case 3 failed"
+    assert valid_numeral("ASDF") == False, "Test case 3 failed"
+    return "Test case 3 passed"
+
+def test4():
+    assert valid_numeral("MCXIV") == True, "Test case 4 failed"
+    assert valid_numeral("MCXIVV") == False, "Test case 4 failed"
+    return "Test case 4 passed"
+
+# Rule 3: Check that there are not 4 of the same character in a row
+def test5():
+    assert valid_numeral("XXX") == True, "Test case 5 failed"
+    assert valid_numeral("XXXX") == False, "Test case 5 failed"
+    return "Test case 5 passed"
+
+def test6():
+    assert valid_numeral("CCM") == True, "Test case 6 failed"
+    assert valid_numeral("CCCC") == False, "Test case 6 failed"
+    return "Test case 6 passed"
+
+# Rule 4: Check that the numerals are ordered from large to small, unless subtraction is used
+def test7():
+    assert valid_numeral("XVIII") == True, "Test case 7 failed"
+    assert valid_numeral("XIV") == True, "Test case 7 failed"
+    assert valid_numeral("IX") == True, "Test case 7 failed"
+    assert valid_numeral("IL") == False, "Test case 7 failed"
+    return "Test case 7 passed"
+
+# Rule 5: Check that a small numeral can precede a larger one only if the smaller is an integer power of 10
+def test8():
+    assert valid_numeral("IV") == True, "Test case 8 failed"
+    assert valid_numeral("IX") == True, "Test case 8 failed"
+    assert valid_numeral("IL") == False, "Test case 8 failed"
+    assert valid_numeral("IC") == False, "Test case 8 failed"
+    return "Test case 8 passed"
+
+# Rule 6: Check that the smaller numeral precedes the larger one only if it is one of the two symbols before the larger one
+def test9():
+    assert valid_numeral("IV") == True, "Test case 9 failed"
+    assert valid_numeral("IX") == True, "Test case 9 failed"
+    assert valid_numeral("IC") == False, "Test case 9 failed"
+    assert valid_numeral("IM") == False, "Test case 9 failed"
+    return "Test case 9 passed"
+
+# Rule 7: Check that sequences of 2 or 3 symbols in a row are valid if they are integer powers of 10
+def test10():
+    assert valid_numeral("II") == True, "Test case 10 failed"
+    assert valid_numeral("III") == True, "Test case 10 failed"
+    assert valid_numeral("VV") == False, "Test case 10 failed"
+    assert valid_numeral("XXX") == True, "Test case 10 failed"
+    assert valid_numeral("LLL") == False, "Test case 10 failed"
+    return "Test case 10 passed"
+
+# Additional test cases to verify comprehensive rules
+
+def test11():
+    assert valid_numeral("XVIII") == True, "Test case 11 failed"
+    return "Test case 11 passed"
+
+def test12():
+    assert valid_numeral("MCXIV") == True, "Test case 12 failed"
+    return "Test case 12 passed"
+
+def test13():
+    assert valid_numeral("MMMCMXCIX") == True, "Test case 13 failed"
+    return "Test case 13 passed"
+
+def test14():
+    assert valid_numeral("VL") == False, "Test case 14 failed"
+    return "Test case 14 passed"
+
+def test15():
+    assert valid_numeral("ASDF") == False, "Test case 15 failed"
+    return "Test case 15 passed"
 
 ###############################################################
 
-# Below are the tests for Rule 1, validating that the string contains only characters
-def test1():
-    assert valid_numeral('XVIII') == True, "Test 1 Failed"
-    assert valid_numeral('MCXIV') == True, "Test 2 Failed"
-    assert valid_numeral('1234') == False, "Test 3 Failed"
-    assert valid_numeral('MCXI@V') == False, "Test 4 Failed"
-    print("All tests for Rule 1 passed.")
-
-# Below are the tests for Rule 2, validating the string contains only valid Roman numeral characters
-def test2():
-    assert valid_numeral('MMMM') == True, "Test 5 Failed"
-    assert valid_numeral('ASDF') == False, "Test 6 Failed"
-    print("All tests for Rule 2 passed.")
-
-# Below are the tests for Rule 3, validating no more than three of the same character in a row
-def test3():
-    assert valid_numeral('IIII') == False, "Test 7 Failed"
-    assert valid_numeral('VVVV') == False, "Test 8 Failed"
-    assert valid_numeral('XXX') == True, "Test 9 Failed"
-    print("All tests for Rule 3 passed.")
-
-# Below are the tests for Rule 4, validating order of numerals from large to small unless subtractive notation
-def test4():
-    assert valid_numeral('XIX') == True, "Test 10 Failed"
-    assert valid_numeral('XVIX') == False, "Test 11 Failed"
-    print("All tests for Rule 4 passed.")
-
-# Below are the tests for Rule 5, small-valued symbol precede a large-valued symbol if small-valued symbol is an integer power of 10
-def test5():
-    assert valid_numeral('IX') == True, "Test 12 Failed"
-    assert valid_numeral('VX') == False, "Test 13 Failed"
-    print("All tests for Rule 5 passed.")
-
-# Below are the tests for Rule 6, small-valued symbol precede a large-valued symbol if it is one of the two symbols in size order before the large-valued symbol
-def test6():
-    assert valid_numeral('IV') == True, "Test 14 Failed"
-    assert valid_numeral('IL') == False, "Test 15 Failed"
-    print("All tests for Rule 6 passed.")
-
-# Below are the tests for Rule 7, validating sequence of 2 or 3 symbols in a row if they are integer powers of 10
-def test7():
-    assert valid_numeral('II') == True, "Test 16 Failed"
-    assert valid_numeral('VV') == False, "Test 17 Failed"
-    assert valid_numeral('III') == True, "Test 18 Failed"
-    print("All tests for Rule 7 passed.")
-
-###############################################################    
-    
 if __name__ == "__main__":
     main()

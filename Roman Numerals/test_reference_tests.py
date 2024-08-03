@@ -1,16 +1,13 @@
 import pytest
-import roman_chat_gpt4
-import roman_chat_gpt3
-import roman_claude3_opus
-import roman_claude3_sonnet
-import roman_claude3_haiku
-import roman_claude_free
-import roman_github_copilot
-import roman_gemini
 import roman_chat_gpt4o
-import roman_chat_gpt4o_new
+import roman_chat_gpt4
+import roman_chat_gpt4omini
 
-modules_to_test = [roman_chat_gpt4, roman_chat_gpt3, roman_claude3_opus, roman_claude3_sonnet, roman_claude3_haiku, roman_claude_free, roman_github_copilot, roman_gemini, roman_chat_gpt4o, roman_chat_gpt4o_new]
+modules_to_test = [
+    roman_chat_gpt4o,
+    roman_chat_gpt4,
+    roman_chat_gpt4omini,
+]
 
 
 @pytest.mark.parametrize("module", modules_to_test)
