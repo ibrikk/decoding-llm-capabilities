@@ -1,0 +1,29 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.4, pytest-8.3.2, pluggy-1.5.0
+rootdir: C:\Users\vmascuser\Documents\decoding-llm-capabilities\Roman Numerals
+collected 1 item
+
+roman_chat_gpt4.py F                                                     [100%]
+
+================================== FAILURES ===================================
+_________________________________ test_cases __________________________________
+
+    def test_cases():
+        # Test cases for the rules
+        assert valid_numeral('XVIII') == True, "Test failed for XVIII"
+        assert valid_numeral('MCXIV') == True, "Test failed for MCXIV"
+        assert valid_numeral('CCCC') == False, "Test failed for CCCC"
+        assert valid_numeral('CIL') == False, "Test failed for CIL"
+        assert valid_numeral('M2C') == False, "Test failed for M2C"
+        assert valid_numeral('ASDF') == False, "Test failed for ASDF"
+        assert valid_numeral('VL') == False, "Test failed for VL"
+        assert valid_numeral('XXX') == True, "Test failed for XXX"
+>       assert valid_numeral('LLL') == False, "Test failed for LLL"
+E       AssertionError: Test failed for LLL
+E       assert True == False
+E        +  where True = valid_numeral('LLL')
+
+roman_chat_gpt4.py:53: AssertionError
+=========================== short test summary info ===========================
+FAILED roman_chat_gpt4.py::test_cases - AssertionError: Test failed for LLL
+============================== 1 failed in 0.02s ==============================
