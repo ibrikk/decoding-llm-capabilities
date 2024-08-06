@@ -58,8 +58,8 @@ def process_test_output(file_name, test_type, module_name=None):
         failure_counts = count_failures(file_path, module_name)
         if len(failure_counts) == 0:
             print(f"All {test_type} tests passed!")
-            # if test_type.endswith('unit'):
-            #     run_mutation_tests(module_name)
+            if test_type.endswith('unit'):
+                run_mutation_tests(module_name)
         elif failure_counts is None:
             print(f"{file_path} DID NOT RUN!!!!!")
         else:
@@ -82,17 +82,35 @@ def process_test_output(file_name, test_type, module_name=None):
     else:
         print(f"{file_name} not found.")
 
-# def run_mutation_tests(module_name):
-#     mutmut_command = f"mutmut run --paths-to-mutate {module_name}.py --tests-dir . --runner \"pytest test_my_solution.py::{module_name}'"
-#     print(f"Running mutation tests for {module_name} with command: {mutmut_command}")
-#     result = subprocess.run(mutmut_command, shell=True, capture_output=True, text=True)
-#     if result.returncode == 0:
-#         print(f"Mutation testing for {module_name} completed successfully.")
-#         # Optionally, process the mutation test results here
-#     else:
-#         print(f"Mutation testing for {module_name} failed.")
-#         print(result.stdout)
-#         print(result.stderr)
+def get_test_functions(test_file):
+    path = 'C:\\Users\\vmascuser\\Documents\\decoding-llm-capabilities\\Roman Numerals\\' + test_file
+    if os.path.exists(path):
+        print(f"Reading test functions from {test_file}")
+        with open(path, 'r') as file:
+            content = file.read()
+        test_functions = re.findall(r'def (test_\w+)\(', content)
+        return test_functions
+    else:
+        print(f"{test_file} not found.")
+        return []
+
+def run_mutation_tests(module_name):
+    test_file = 'test_my_solution.py'
+    test_functions = get_test_functions(test_file)
+    if not test_functions:
+        print(f"No test functions found in {test_file}.")
+        return
+    for test_function in test_functions:
+        mutmut_command = f'mutmut run --paths-to-mutate {module_name}.py --tests-dir . --runner "pytest {test_file}::{test_function}[{module_name}]"'
+        print(f"Running mutation tests for {module_name} with command: {mutmut_command}")
+        result = subprocess.run(mutmut_command, shell=True, capture_output=True, text=True)
+        if result.returncode == 0 or '🎉' in result.stdout or '⏰' in result.stdout or '🤔' in result.stdout or '🙁' in result.stdout or '🔇' in result.stdout:
+            print(f"Mutation testing for {module_name}::{test_function} completed successfully.")
+        else:
+            print(f"Mutation testing for {module_name}::{test_function} failed.")
+            print("Return code:", result.returncode)
+            print("Stdout:", result.stdout)
+            print("Stderr:", result.stderr)
 
 def main():
     process_test_output('pytest_output.txt', 'reference')
