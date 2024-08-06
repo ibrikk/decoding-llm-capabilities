@@ -35,8 +35,12 @@ def count_failures(output_file, module_name_txt=None):
         # Count the failures for a specific module
         line_to_parse = ""
         for line in lines:
-            if "failed in" in line:
+            if "no tests ran" in line:
+                print("NO TESTS RAN!!!!!")
+                return None
+            if "failed in" in line or "failed," in line:
                 line_to_parse = line
+                break
         if line_to_parse:
             count = re.search(r"(\d+) failed", line_to_parse)
             if count:
@@ -55,6 +59,8 @@ def process_test_output(file_name, test_type, module_name=None):
             failure_counts = count_failures(file_path, module_name)
             if len(failure_counts) == 0:
                 print(f"All {test_type} tests passed!")
+            elif failure_counts is None:
+                print(f"{file_path} DID NOT RUN!!!!!")
             else:
                 if module_name:
                     print(f"{module_name} unit Test Failure Counts:")

@@ -88,26 +88,28 @@ def is_valid_subtraction(larger_value, smaller_value):
   return (larger_value, smaller_value) in ((5, 1), (10, 1))
 
 
+def test_valid_numeral():
+    # Test cases for Rule 1 (alphabetic characters)
+    assert not valid_numeral("123")
+    assert not valid_numeral("!@#$%^")
+    
+    # Test cases for Rule 2 (valid Roman characters)
+    assert not valid_numeral("IIII")  # More than 3 'I'
+    assert not valid_numeral("VVVV")  # More than 3 'V'
+    assert not valid_numeral("AB")
+    
+    # Test cases for Rule 3 (no more than 3 consecutive repetitions)
+    assert not valid_numeral("IIII")
+    assert not valid_numeral("VVVVV")
+    
+    # Test cases for Rule 4 (larger to smaller order)
+    assert not valid_numeral("VL")  # Large followed by smaller (not allowed)
+    assert valid_numeral("IV")  # Allowed subtraction (I from V)
+    assert valid_numeral("IX")  # Allowed subtraction (I from X)
+
 def main():
-  """
-  Runs the unit tests for the Roman numeral validation function.
-  """
-  # Test cases for Rule 1 (alphabetic characters)
-  assert not valid_numeral("123")
-  assert not valid_numeral("!@#$%^")
+  valid_numeral("VL")
 
-  # Test cases for Rule 2 (valid Roman characters)
-  assert not valid_numeral("IIII")  # More than 3 'I'
-  assert not valid_numeral("VVVV")  # More than 3 'V'
-  assert not valid_numeral("AB")
-
-  # Test cases for Rule 3 (no more than 3 consecutive repetitions)
-  assert not valid_numeral("IIII")
-  assert not valid_numeral("VVVVV")
-
-  # Test cases for Rule 4 (larger to smaller order)
-  assert not valid_numeral("VL")  # Large followed by smaller (not allowed)
-  assert valid_numeral("IV")  # Allowed subtraction (I from V)
-  assert valid_numeral("IX")  # Allowed subtraction (I from X)
-
-  print
+if __name__ == "__main__":
+    import pytest
+    pytest.main()
