@@ -17,3 +17,8 @@ python parse_pytest_output.py
 
 echo All tests completed.
 pause
+
+@REM In Command prompt run the following:
+@REM set PYTHONIOENCODING=utf-8
+@REM chcp 65001
+@REM run_tests.bat

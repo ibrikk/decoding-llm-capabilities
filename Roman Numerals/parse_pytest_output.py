@@ -58,8 +58,9 @@ def process_test_output(file_name, test_type, module_name=None):
         failure_counts = count_failures(file_path, module_name)
         if len(failure_counts) == 0:
             print(f"All {test_type} tests passed!")
-            if test_type.endswith('unit'):
-                run_mutation_tests(module_name)
+            # TODO: Uncomment this but might not work properly
+            # if test_type.endswith('unit'):
+            #     run_mutation_tests(module_name)
         elif failure_counts is None:
             print(f"{file_path} DID NOT RUN!!!!!")
         else:
@@ -94,23 +95,48 @@ def get_test_functions(test_file):
         print(f"{test_file} not found.")
         return []
 
+def count_emojis_in_output(output):
+    emojis = ['🎉', '⏰', '🤔', '🙁', '🔇']
+    emoji_count = {emoji: output.count(emoji) for emoji in emojis}
+    return emoji_count
+
 def run_mutation_tests(module_name):
     test_file = 'test_my_solution.py'
     test_functions = get_test_functions(test_file)
     if not test_functions:
         print(f"No test functions found in {test_file}.")
         return
+    
+    total_tests = len(test_functions)
+    passed_tests = 0
+    
     for test_function in test_functions:
         mutmut_command = f'mutmut run --paths-to-mutate {module_name}.py --tests-dir . --runner "pytest {test_file}::{test_function}[{module_name}]"'
         print(f"Running mutation tests for {module_name} with command: {mutmut_command}")
-        result = subprocess.run(mutmut_command, shell=True, capture_output=True, text=True)
-        if result.returncode == 0 or '🎉' in result.stdout or '⏰' in result.stdout or '🤔' in result.stdout or '🙁' in result.stdout or '🔇' in result.stdout:
+        result = subprocess.run(
+            mutmut_command,
+            shell=True,
+            capture_output=True,
+            text=True,
+            cwd='C:\\Users\\vmascuser\\Documents\\decoding-llm-capabilities\\Roman Numerals',
+            encoding='utf-8'
+        )
+        emoji_count = count_emojis_in_output(result.stdout)
+        if result.returncode == 0 or all(count > 0 for count in emoji_count.values()):
             print(f"Mutation testing for {module_name}::{test_function} completed successfully.")
+            passed_tests += 1
         else:
             print(f"Mutation testing for {module_name}::{test_function} failed.")
             print("Return code:", result.returncode)
             print("Stdout:", result.stdout)
             print("Stderr:", result.stderr)
+    
+    print(f"Mutation testing summary for {module_name}:")
+    print(f"Total tests: {total_tests}")
+    print(f"Passed tests: {passed_tests}")
+    if total_tests > 0:
+        coverage_percentage = (passed_tests / total_tests) * 100
+        print(f"Mutation testing coverage: {coverage_percentage:.2f}%")
 
 def main():
     process_test_output('pytest_output.txt', 'reference')
