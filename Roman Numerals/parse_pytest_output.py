@@ -1,5 +1,6 @@
 import os
 import re
+import subprocess
 
 all_modules = [
     "roman_chat_gpt4",
@@ -18,7 +19,6 @@ def count_failures(output_file, module_name_txt=None):
         lines = file.readlines()
     
     if not module_name_txt:
-        # Start processing from the "short test summary info" section
         in_summary_section = False
         for line in lines:
             if "short test summary info" in line:
@@ -32,7 +32,6 @@ def count_failures(output_file, module_name_txt=None):
                     if module_name in all_modules:
                         failure_counts[module_name] = failure_counts.get(module_name, 0) + 1
     else:
-        # Count the failures for a specific module
         line_to_parse = ""
         for line in lines:
             if "no tests ran" in line:
@@ -50,36 +49,50 @@ def count_failures(output_file, module_name_txt=None):
 
 def process_test_output(file_name, test_type, module_name=None):
     if test_type == 'reference':
-        file_path = 'C:\\Users\\vmascuser\\Documents\\decoding-llm-capabilities\Roman Numerals\pytest_output.txt'
+        file_path = 'C:\\Users\\vmascuser\\Documents\\decoding-llm-capabilities\\Roman Numerals\\pytest_output.txt'
         print(f"Checking for file: {file_path}")
     else:
         file_path = 'C:\\Users\\vmascuser\\Documents\\decoding-llm-capabilities\\Roman Numerals\\' + file_name
     if os.path.exists(file_path):
-            print(f"Processing file: {file_path}")
-            failure_counts = count_failures(file_path, module_name)
-            if len(failure_counts) == 0:
-                print(f"All {test_type} tests passed!")
-            elif failure_counts is None:
-                print(f"{file_path} DID NOT RUN!!!!!")
-            else:
-                if module_name:
-                    print(f"{module_name} unit Test Failure Counts:")
-                    if module_name in failure_counts:
-                        count = failure_counts[module_name]
-                        test_word = "test" if count == 1 else "tests"
-                        print(f"{module_name}: {count} failed {test_word}")
-                    else:
-                        print(f"All {module_name} unit tests passed!")
+        print(f"Processing file: {file_path}")
+        failure_counts = count_failures(file_path, module_name)
+        if len(failure_counts) == 0:
+            print(f"All {test_type} tests passed!")
+            # if test_type.endswith('unit'):
+            #     run_mutation_tests(module_name)
+        elif failure_counts is None:
+            print(f"{file_path} DID NOT RUN!!!!!")
+        else:
+            if module_name:
+                print(f"{module_name} unit Test Failure Counts:")
+                if module_name in failure_counts:
+                    count = failure_counts[module_name]
+                    test_word = "test" if count == 1 else "tests"
+                    print(f"{module_name}: {count} failed {test_word}")
                 else:
-                    print(f"{test_type.capitalize()} Test Failure Counts by Module:")
-                    for module, count in failure_counts.items():
-                        test_word = "test" if count == 1 else "tests"
-                        print(f"{module}: {count} failed {test_word}")
-                    for my_module in all_modules:
-                        if my_module not in failure_counts:
-                            print(f"{my_module}: 0 failed tests")
+                    print(f"All {module_name} unit tests passed!")
+            else:
+                print(f"{test_type.capitalize()} Test Failure Counts by Module:")
+                for module, count in failure_counts.items():
+                    test_word = "test" if count == 1 else "tests"
+                    print(f"{module}: {count} failed {test_word}")
+                for my_module in all_modules:
+                    if my_module not in failure_counts:
+                        print(f"{my_module}: 0 failed tests")
     else:
         print(f"{file_name} not found.")
+
+# def run_mutation_tests(module_name):
+#     mutmut_command = f"mutmut run --paths-to-mutate {module_name}.py --tests-dir . --runner \"pytest test_my_solution.py::{module_name}'"
+#     print(f"Running mutation tests for {module_name} with command: {mutmut_command}")
+#     result = subprocess.run(mutmut_command, shell=True, capture_output=True, text=True)
+#     if result.returncode == 0:
+#         print(f"Mutation testing for {module_name} completed successfully.")
+#         # Optionally, process the mutation test results here
+#     else:
+#         print(f"Mutation testing for {module_name} failed.")
+#         print(result.stdout)
+#         print(result.stderr)
 
 def main():
     process_test_output('pytest_output.txt', 'reference')
