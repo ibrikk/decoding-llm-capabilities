@@ -8,7 +8,14 @@ import roman_gemini
 import roman_chat_gpt4o
 import roman_chat_gpt4omini
 
-modules_to_test = [roman_chat_gpt4, roman_claude_opus, roman_claude_sonnet, roman_claude_haiku, roman_github_copilot, roman_gemini, roman_chat_gpt4o, roman_chat_gpt4omini]
+modules_to_test = [roman_chat_gpt4, 
+                   roman_claude_opus, 
+                   roman_claude_sonnet, 
+                   roman_claude_haiku, 
+                   roman_github_copilot, 
+                   roman_gemini, roman_chat_gpt4o, 
+                   roman_chat_gpt4omini
+                   ]
 
 @pytest.mark.parametrize("module", modules_to_test)
 def test_XVIII(module):
