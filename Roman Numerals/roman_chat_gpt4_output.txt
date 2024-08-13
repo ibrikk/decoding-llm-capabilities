@@ -1,12 +1,12 @@
-============================= test session starts =============================
-platform win32 -- Python 3.12.4, pytest-8.3.2, pluggy-1.5.0
-rootdir: C:\Users\vmascuser\Documents\decoding-llm-capabilities\Roman Numerals
+============================= test session starts ==============================
+platform darwin -- Python 3.11.5, pytest-8.3.2, pluggy-1.5.0
+rootdir: /Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals
 collected 1 item
 
 roman_chat_gpt4.py F                                                     [100%]
 
-================================== FAILURES ===================================
-_________________________________ test_cases __________________________________
+=================================== FAILURES ===================================
+__________________________________ test_cases __________________________________
 
     def test_cases():
         # Test cases for the rules
@@ -24,6 +24,6 @@ E       assert True == False
 E        +  where True = valid_numeral('LLL')
 
 roman_chat_gpt4.py:53: AssertionError
-=========================== short test summary info ===========================
+=========================== short test summary info ============================
 FAILED roman_chat_gpt4.py::test_cases - AssertionError: Test failed for LLL
-============================== 1 failed in 0.02s ==============================
+============================== 1 failed in 0.03s ===============================

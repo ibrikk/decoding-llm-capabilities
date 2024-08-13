@@ -49,10 +49,11 @@ def count_failures(output_file, module_name_txt=None):
 
 def process_test_output(file_name, test_type, module_name=None):
     if test_type == 'reference':
-        file_path = 'C:\\Users\\vmascuser\\Documents\\decoding-llm-capabilities\\Roman Numerals\\pytest_output.txt'
+        file_path = '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/pytest_output.txt'
         print(f"Checking for file: {file_path}")
     else:
-        file_path = 'C:\\Users\\vmascuser\\Documents\\decoding-llm-capabilities\\Roman Numerals\\' + file_name
+        # file_path = 'C:\\Users\\vmascuser\\Documents\\decoding-llm-capabilities\\Roman Numerals\\' + file_name
+        file_path = '/Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals/' + file_name
     if os.path.exists(file_path):
         print(f"Processing file: {file_path}")
         failure_counts = count_failures(file_path, module_name)

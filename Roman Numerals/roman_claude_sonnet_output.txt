@@ -1,8 +1,8 @@
-============================= test session starts =============================
-platform win32 -- Python 3.12.4, pytest-8.3.2, pluggy-1.5.0
-rootdir: C:\Users\vmascuser\Documents\decoding-llm-capabilities\Roman Numerals
+============================= test session starts ==============================
+platform darwin -- Python 3.11.5, pytest-8.3.2, pluggy-1.5.0
+rootdir: /Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals
 collected 10 items
 
 roman_claude_sonnet.py ..........                                        [100%]
 
-============================= 10 passed in 0.01s ==============================
+============================== 10 passed in 0.02s ==============================

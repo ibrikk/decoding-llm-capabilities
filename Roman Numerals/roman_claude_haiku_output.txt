@@ -1,12 +1,12 @@
-============================= test session starts =============================
-platform win32 -- Python 3.12.4, pytest-8.3.2, pluggy-1.5.0
-rootdir: C:\Users\vmascuser\Documents\decoding-llm-capabilities\Roman Numerals
+============================= test session starts ==============================
+platform darwin -- Python 3.11.5, pytest-8.3.2, pluggy-1.5.0
+rootdir: /Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals
 collected 8 items
 
 roman_claude_haiku.py ...FFFF.                                           [100%]
 
-================================== FAILURES ===================================
-____________________________________ test4 ____________________________________
+=================================== FAILURES ===================================
+____________________________________ test4 _____________________________________
 
     def test4():
         """
@@ -20,7 +20,7 @@ E       AssertionError: assert False
 E        +  where False = valid_numeral('IV')
 
 roman_claude_haiku.py:99: AssertionError
-____________________________________ test5 ____________________________________
+____________________________________ test5 _____________________________________
 
     def test5():
         """
@@ -31,7 +31,7 @@ E       AssertionError: assert False
 E        +  where False = valid_numeral('IV')
 
 roman_claude_haiku.py:116: AssertionError
-____________________________________ test6 ____________________________________
+____________________________________ test6 _____________________________________
 
     def test6():
         """
@@ -45,7 +45,7 @@ E       AssertionError: assert not True
 E        +  where True = valid_numeral('IIX')
 
 roman_claude_haiku.py:130: AssertionError
-____________________________________ test7 ____________________________________
+____________________________________ test7 _____________________________________
 
     def test7():
         """
@@ -62,9 +62,9 @@ E       AssertionError: assert False
 E        +  where False = valid_numeral('MM')
 
 roman_claude_haiku.py:142: AssertionError
-=========================== short test summary info ===========================
+=========================== short test summary info ============================
 FAILED roman_claude_haiku.py::test4 - AssertionError: assert False
 FAILED roman_claude_haiku.py::test5 - AssertionError: assert False
 FAILED roman_claude_haiku.py::test6 - AssertionError: assert not True
 FAILED roman_claude_haiku.py::test7 - AssertionError: assert False
-========================= 4 failed, 4 passed in 0.03s =========================
+========================= 4 failed, 4 passed in 0.04s ==========================
