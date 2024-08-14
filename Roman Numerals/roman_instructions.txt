@@ -211,4 +211,4 @@ if __name__ == "__main__":
     main()    
 
 
-Provide a solution to the template methods. Include comments for clarity, write unit tests without using external packages, and ensure the code is readable.
+Provide a solution to the template methods without using external packages. Include comments for clarity, write unit tests, and ensure the code is readable.
