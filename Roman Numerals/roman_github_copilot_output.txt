@@ -7,15 +7,15 @@ roman_github_copilot.py ...                                              [100%]
 
 =============================== warnings summary ===============================
 roman_github_copilot.py::test1
-  /Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/myenv/lib/python3.11/site-packages/_pytest/python.py:163: PytestReturnNotNoneWarning: Expected None, but roman_github_copilot.py::test1 returned 'Rule 1 tests passed', which will be an error in a future version of pytest.  Did you mean to use `assert` instead of `return`?
+  /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/_pytest/python.py:163: PytestReturnNotNoneWarning: Expected None, but roman_github_copilot.py::test1 returned 'Rule 1 tests passed', which will be an error in a future version of pytest.  Did you mean to use `assert` instead of `return`?
     warnings.warn(
 
 roman_github_copilot.py::test2
-  /Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/myenv/lib/python3.11/site-packages/_pytest/python.py:163: PytestReturnNotNoneWarning: Expected None, but roman_github_copilot.py::test2 returned 'Rule 2 tests passed', which will be an error in a future version of pytest.  Did you mean to use `assert` instead of `return`?
+  /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/_pytest/python.py:163: PytestReturnNotNoneWarning: Expected None, but roman_github_copilot.py::test2 returned 'Rule 2 tests passed', which will be an error in a future version of pytest.  Did you mean to use `assert` instead of `return`?
     warnings.warn(
 
 roman_github_copilot.py::testN
-  /Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/myenv/lib/python3.11/site-packages/_pytest/python.py:163: PytestReturnNotNoneWarning: Expected None, but roman_github_copilot.py::testN returned 'Rule 3-7 tests passed', which will be an error in a future version of pytest.  Did you mean to use `assert` instead of `return`?
+  /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/_pytest/python.py:163: PytestReturnNotNoneWarning: Expected None, but roman_github_copilot.py::testN returned 'Rule 3-7 tests passed', which will be an error in a future version of pytest.  Did you mean to use `assert` instead of `return`?
     warnings.warn(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

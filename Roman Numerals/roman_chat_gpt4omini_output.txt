@@ -43,4 +43,4 @@ roman_chat_gpt4omini.py:123: AssertionError
 FAILED roman_chat_gpt4omini.py::test4 - AssertionError: Test case test4 failed
 FAILED roman_chat_gpt4omini.py::test5 - AssertionError: Test case test5 failed
 FAILED roman_chat_gpt4omini.py::test6 - AssertionError: Test case test6 failed
-========================= 3 failed, 4 passed in 0.04s ==========================
+========================= 3 failed, 4 passed in 0.06s ==========================

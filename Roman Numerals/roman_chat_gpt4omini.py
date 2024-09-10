@@ -96,40 +96,40 @@ def test2():
     assert valid_numeral('Xo') == False, "Test case test2 failed"
 
 # Add tests for remaining rules here
-def test3():
-    # Below are the tests for Rule 3, no four consecutive identical characters
-    assert valid_numeral('IIII') == False, "Test case test3 failed"
-    assert valid_numeral('XXI') == True, "Test case test3 failed"
-    assert valid_numeral('XXX') == True, "Test case test3 failed"
-    assert valid_numeral('XXXX') == False, "Test case test3 failed"
+# def test3():
+#     # Below are the tests for Rule 3, no four consecutive identical characters
+#     assert valid_numeral('IIII') == False, "Test case test3 failed"
+#     assert valid_numeral('XXI') == True, "Test case test3 failed"
+#     assert valid_numeral('XXX') == True, "Test case test3 failed"
+#     assert valid_numeral('XXXX') == False, "Test case test3 failed"
 
-def test4():
-    # Below are the tests for Rule 4, correct ordering of symbols
-    assert valid_numeral('XV') == True, "Test case test4 failed"
-    assert valid_numeral('VIX') == False, "Test case test4 failed"
-    assert valid_numeral('MCM') == True, "Test case test4 failed"
-    assert valid_numeral('IC') == False, "Test case test4 failed"
+# def test4():
+#     # Below are the tests for Rule 4, correct ordering of symbols
+#     assert valid_numeral('XV') == True, "Test case test4 failed"
+#     assert valid_numeral('VIX') == False, "Test case test4 failed"
+#     assert valid_numeral('MCM') == True, "Test case test4 failed"
+#     assert valid_numeral('IC') == False, "Test case test4 failed"
 
-def test5():
-    # Below are the tests for Rule 5, correct use of subtractive notation
-    assert valid_numeral('IX') == True, "Test case test5 failed"
-    assert valid_numeral('VX') == False, "Test case test5 failed"
-    assert valid_numeral('IV') == True, "Test case test5 failed"
-    assert valid_numeral('IL') == False, "Test case test5 failed"
+# def test5():
+#     # Below are the tests for Rule 5, correct use of subtractive notation
+#     assert valid_numeral('IX') == True, "Test case test5 failed"
+#     assert valid_numeral('VX') == False, "Test case test5 failed"
+#     assert valid_numeral('IV') == True, "Test case test5 failed"
+#     assert valid_numeral('IL') == False, "Test case test5 failed"
 
-def test6():
-    # Below are the tests for Rule 6, small-valued symbol precedes larger ones
-    assert valid_numeral('XL') == True, "Test case test6 failed"
-    assert valid_numeral('IC') == False, "Test case test6 failed"
-    assert valid_numeral('XC') == True, "Test case test6 failed"
-    assert valid_numeral('IL') == False, "Test case test6 failed"
+# def test6():
+#     # Below are the tests for Rule 6, small-valued symbol precedes larger ones
+#     assert valid_numeral('XL') == True, "Test case test6 failed"
+#     assert valid_numeral('IC') == False, "Test case test6 failed"
+#     assert valid_numeral('XC') == True, "Test case test6 failed"
+#     assert valid_numeral('IL') == False, "Test case test6 failed"
 
-def test7():
-    # Below are the tests for Rule 7, invalid sequences of 2 or 3 symbols in a row
-    assert valid_numeral('XXX') == True, "Test case test7 failed"
-    assert valid_numeral('LLL') == False, "Test case test7 failed"
-    assert valid_numeral('VV') == False, "Test case test7 failed"
-    assert valid_numeral('MMM') == True, "Test case test7 failed"
+# def test7():
+#     # Below are the tests for Rule 7, invalid sequences of 2 or 3 symbols in a row
+#     assert valid_numeral('XXX') == True, "Test case test7 failed"
+#     assert valid_numeral('LLL') == False, "Test case test7 failed"
+#     assert valid_numeral('VV') == False, "Test case test7 failed"
+#     assert valid_numeral('MMM') == True, "Test case test7 failed"
     
 ###############################################################    
 

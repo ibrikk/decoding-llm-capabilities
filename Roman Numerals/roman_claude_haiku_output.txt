@@ -67,4 +67,4 @@ FAILED roman_claude_haiku.py::test4 - AssertionError: assert False
 FAILED roman_claude_haiku.py::test5 - AssertionError: assert False
 FAILED roman_claude_haiku.py::test6 - AssertionError: assert not True
 FAILED roman_claude_haiku.py::test7 - AssertionError: assert False
-========================= 4 failed, 4 passed in 0.04s ==========================
+========================= 4 failed, 4 passed in 0.09s ==========================
