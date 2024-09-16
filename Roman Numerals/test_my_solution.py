@@ -76,3 +76,7 @@ def test_XD(module):
 @pytest.mark.parametrize("module", modules_to_test)
 def test_VX(module):
     assert module.valid_numeral("VX") == False, "VX should be False (V can't precede X)"
+
+@pytest.mark.parametrize("module", modules_to_test)
+def test_VX(module):
+    assert module.valid_numeral("LC") == False, "VX should be False (V can't precede X)"

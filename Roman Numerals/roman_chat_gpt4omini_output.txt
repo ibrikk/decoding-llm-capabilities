@@ -1,46 +1,8 @@
 ============================= test session starts ==============================
 platform darwin -- Python 3.11.5, pytest-8.3.2, pluggy-1.5.0
 rootdir: /Users/ibrahimkhalilov/Documents/decoding-llm-capabilities/Roman Numerals
-collected 7 items
+collected 2 items
 
-roman_chat_gpt4omini.py ...FFF.                                          [100%]
+roman_chat_gpt4omini.py ..                                               [100%]
 
-=================================== FAILURES ===================================
-____________________________________ test4 _____________________________________
-
-    def test4():
-        # Below are the tests for Rule 4, correct ordering of symbols
-        assert valid_numeral('XV') == True, "Test case test4 failed"
->       assert valid_numeral('VIX') == False, "Test case test4 failed"
-E       AssertionError: Test case test4 failed
-E       assert True == False
-E        +  where True = valid_numeral('VIX')
-
-roman_chat_gpt4omini.py:109: AssertionError
-____________________________________ test5 _____________________________________
-
-    def test5():
-        # Below are the tests for Rule 5, correct use of subtractive notation
-        assert valid_numeral('IX') == True, "Test case test5 failed"
->       assert valid_numeral('VX') == False, "Test case test5 failed"
-E       AssertionError: Test case test5 failed
-E       assert True == False
-E        +  where True = valid_numeral('VX')
-
-roman_chat_gpt4omini.py:116: AssertionError
-____________________________________ test6 _____________________________________
-
-    def test6():
-        # Below are the tests for Rule 6, small-valued symbol precedes larger ones
-        assert valid_numeral('XL') == True, "Test case test6 failed"
->       assert valid_numeral('IC') == False, "Test case test6 failed"
-E       AssertionError: Test case test6 failed
-E       assert True == False
-E        +  where True = valid_numeral('IC')
-
-roman_chat_gpt4omini.py:123: AssertionError
-=========================== short test summary info ============================
-FAILED roman_chat_gpt4omini.py::test4 - AssertionError: Test case test4 failed
-FAILED roman_chat_gpt4omini.py::test5 - AssertionError: Test case test5 failed
-FAILED roman_chat_gpt4omini.py::test6 - AssertionError: Test case test6 failed
-========================= 3 failed, 4 passed in 0.06s ==========================
+============================== 2 passed in 0.01s ===============================
